@@ -5,13 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>✨ بطاطا المدينة ✨ | قائمة طعام فاخرة</title>
 
-    
-<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
-    
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Tajawal:wght@400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-    
-<style>
+    <style>
         /* المتغيرات الأساسية: لوحة ألوان دافئة ومضيئة */
         :root {
             --bright-yellow: #FFC107; /* أصفر مشرق ودافئ */
@@ -20,13 +17,13 @@
             --luminous-white: #FFFFFF; /* أبيض ناصع للإضاءة */
             --text-dark: #333333; /* نص داكن على خلفية فاتحة */
             --text-light: #F0F0F0; /* نص فاتح على خلفية داكنة */
-            --card-bg-light: rgba(255, 255, 255, 0.95); /* خلفية بطاقة شبه شفافة فاتحة */
-            --shadow-soft: rgba(0, 0, 0, 0.2); /* ظل ناعم */
-            --shadow-intense: rgba(0, 0, 0, 0.6); /* ظل أقوى */
+            --card-bg-light: rgba(255, 255, 255, 0.98); /* خلفية بطاقة شبه شفافة فاتحة، أقل شفافية */
+            --shadow-soft: rgba(0, 0, 0, 0.25); /* ظل ناعم، أقوى قليلاً */
+            --shadow-intense: rgba(0, 0, 0, 0.7); /* ظل أقوى، أكثر عمقاً */
             --gradient-main: linear-gradient(135deg, var(--vibrant-orange) 0%, var(--bright-yellow) 100%);
             --gradient-reverse: linear-gradient(135deg, var(--bright-yellow) 0%, var(--vibrant-orange) 100%);
-            --bg-glow-start: rgba(255, 193, 7, 0.8); /* توهج الخلفية */
-            --bg-glow-end: rgba(255, 87, 34, 0.8);
+            --bg-glow-start: rgba(255, 193, 7, 0.9); /* توهج الخلفية، أقوى */
+            --bg-glow-end: rgba(255, 87, 34, 0.9);
         }
 
         /* إعادة تعيين أساسي لجميع العناصر */
@@ -44,7 +41,7 @@
             overflow-x: hidden;
             direction: rtl;
             text-align: right;
-            font-size: 16px; /* تم تصغيره */
+            font-size: 17px; /* تم تكبيره قليلاً */
             position: relative;
         }
 
@@ -76,14 +73,14 @@
             width: 200%;
             height: 200%;
             background: radial-gradient(circle at center, var(--bg-glow-start) 0%, transparent 50%);
-            opacity: 0.3;
+            opacity: 0.4; /* توهج أقوى */
             animation: backgroundGlow 15s ease-in-out infinite alternate;
             pointer-events: none;
         }
         @keyframes backgroundGlow {
-            0% { transform: scale(1); opacity: 0.3; }
-            50% { transform: scale(1.1); opacity: 0.4; }
-            100% { transform: scale(1); opacity: 0.3; }
+            0% { transform: scale(1); opacity: 0.4; }
+            50% { transform: scale(1.1); opacity: 0.5; } /* توهج أقوى */
+            100% { transform: scale(1); opacity: 0.4; }
         }
 
         /* جسيمات البرجر والبطاطا المتحركة */
@@ -92,15 +89,15 @@
             font-size: 0px;
             opacity: 0;
             pointer-events: none;
-            filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.7));
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* ظل أقوى */
             animation: moveParticle linear infinite;
         }
 
         @keyframes moveParticle {
-            0% { transform: translate(var(--x-start, 0vw), var(--y-start, 0vh)) scale(0.2) rotate(0deg); opacity: 0; }
-            10% { opacity: 0.8; }
-            90% { opacity: 0.8; }
-            100% { transform: translate(var(--x-end, 100vw), var(--y-end, 100vh)) scale(1.2) rotate(var(--rotate-end, 360deg)); opacity: 0; }
+            0% { transform: translate(var(--x-start, 0vw), var(--y-start, 0vh)) scale(0.3) rotate(0deg); opacity: 0; } /* حجم أكبر قليلاً */
+            10% { opacity: 0.9; } /* وضوح أعلى */
+            90% { opacity: 0.9; }
+            100% { transform: translate(var(--x-end, 100vw), var(--y-end, 100vh)) scale(1.3) rotate(var(--rotate-end, 360deg)); opacity: 0; } /* حجم أكبر قليلاً */
         }
 
 
@@ -128,16 +125,16 @@
         }
 
         .intro-logo {
-            width: 150px; /* تم تصغيره */
-            height: 150px; /* تم تصغيره */
+            width: 160px; /* تم تكبيره قليلاً */
+            height: 160px; /* تم تكبيره قليلاً */
             border-radius: 50%;
             overflow: hidden;
             background-color: var(--luminous-white);
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 25px; /* تم تصغيره */
-            box-shadow: 0 0 25px var(--bright-yellow), 0 0 50px var(--vibrant-orange); /* تم تصغيره */
+            margin-bottom: 30px; /* تم تكبيره قليلاً */
+            box-shadow: 0 0 30px var(--bright-yellow), 0 0 60px var(--vibrant-orange); /* ظلال أقوى */
             transform: scale(0);
             opacity: 0;
             animation: logoPopIn 1s ease-out forwards;
@@ -167,11 +164,11 @@
 
         .intro-text {
             font-family: 'Tajawal', sans-serif;
-            font-size: 3em; /* تم تصغيره */
+            font-size: 3.2em; /* تم تكبيره قليلاً */
             color: var(--luminous-white);
-            text-shadow: 0 0 15px var(--bright-yellow), 0 0 30px var(--vibrant-orange); /* تم تصغيره */
+            text-shadow: 0 0 20px var(--bright-yellow), 0 0 40px var(--vibrant-orange); /* ظلال أقوى */
             opacity: 0;
-            transform: translateY(40px); /* تم تصغيره */
+            transform: translateY(50px); /* تم تكبيره قليلاً */
             animation: textFadeIn 1.5s ease-out forwards;
             animation-delay: 0.8s;
             position: relative;
@@ -185,13 +182,13 @@
         /* مؤشر التحميل (Loading Indicator) */
         .loading-text {
             font-family: 'Cairo', sans-serif;
-            font-size: 1.2em; /* تم تصغيره */
+            font-size: 1.3em; /* تم تكبيره قليلاً */
             color: var(--luminous-white);
-            margin-top: 15px; /* تم تصغيره */
+            margin-top: 20px; /* تم تكبيره قليلاً */
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 2s;
-            text-shadow: 0 0 8px rgba(0,0,0,0.5); /* تم تصغيره */
+            text-shadow: 0 0 10px rgba(0,0,0,0.6); /* ظل أقوى */
         }
 
         @keyframes fadeIn {
@@ -214,14 +211,14 @@
 
         /* شريط التحميل */
         .loading-bar-container {
-            width: 70%; /* تم تصغيره */
-            max-width: 350px; /* تم تصغيره */
-            height: 8px; /* تم تصغيره */
+            width: 75%; /* تم تكبيره قليلاً */
+            max-width: 400px; /* تم تكبيره قليلاً */
+            height: 10px; /* تم تكبيره قليلاً */
             background-color: var(--luminous-white);
-            border-radius: 4px; /* تم تصغيره */
-            margin-top: 25px; /* تم تصغيره */
+            border-radius: 5px; /* تم تكبيره قليلاً */
+            margin-top: 30px; /* تم تكبيره قليلاً */
             overflow: hidden;
-            box-shadow: inset 0 0 4px rgba(0,0,0,0.2); /* تم تصغيره */
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3); /* ظل أقوى */
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 2.2s;
@@ -231,10 +228,10 @@
             width: 0%;
             height: 100%;
             background: #FF0000;
-            border-radius: 4px;
+            border-radius: 5px;
             animation: fillBar 3.5s ease-out forwards;
             animation-delay: 0.5s;
-            box-shadow: 0 0 12px #FF0000; /* تم تصغيره */
+            box-shadow: 0 0 15px #FF0000; /* ظل أقوى */
         }
 
         @keyframes fillBar {
@@ -258,22 +255,22 @@
             font-size: 0px;
             opacity: 0;
             animation: burstOut 1.5s ease-out forwards;
-            filter: drop-shadow(0 0 8px var(--luminous-white)); /* تم تصغيره */
+            filter: drop-shadow(0 0 10px var(--luminous-white)); /* ظل أقوى */
         }
 
         @keyframes burstOut {
             0% { transform: scale(0) translate(0,0); opacity: 0; }
             20% { opacity: 1; }
-            100% { transform: scale(1.5) translate(var(--x-offset), var(--y-offset)); opacity: 0; }
+            100% { transform: scale(1.8) translate(var(--x-offset), var(--y-offset)); opacity: 0; } /* حجم أكبر قليلاً */
         }
 
 
         /* المحتوى الرئيسي بعد التحميل */
         #main-content {
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(60px); /* تم تكبيره قليلاً */
             transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-            max-width: 1200px; /* تم تصغيره */
+            max-width: 1250px; /* تم تكبيره قليلاً */
             margin: 0 auto;
             position: relative;
             z-index: 10;
@@ -291,39 +288,98 @@
         /* الهيدر الأنيق (ثابت تماماً الآن) */
         .header {
             text-align: center;
-            padding: 30px 15px; /* تم تصغيره */
-            background: rgba(255, 255, 255, 0.9);
-            border-radius: 0 0 40px 40px; /* تم تصغيره */
-            box-shadow: 0 8px 25px var(--shadow-intense); /* تم تصغيره */
+            padding: 35px 20px; /* تم تكبيره قليلاً */
+            background: rgba(255, 255, 255, 0.95); /* أقل شفافية */
+            border-radius: 0 0 45px 45px; /* تم تكبيره قليلاً */
+            box-shadow: 0 10px 30px var(--shadow-intense); /* ظل أقوى */
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 100;
-            border-bottom: 4px solid var(--vibrant-orange); /* تم تصغيره */
-            backdrop-filter: blur(8px); /* تم تصغيره */
+            border-bottom: 5px solid var(--vibrant-orange); /* حد أسمك */
+            backdrop-filter: blur(10px); /* تم تكبيره قليلاً */
+            overflow: hidden; /* لإخفاء أي جزء من الفيديو يتجاوز الهيدر */
+            display: flex; /* لتمكين الترتيب بالـ flexbox */
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            position: relative; /* لتحديد موقع الفيديو داخله */
+            height: 250px; /* **تم تقليل ارتفاع الهيدر لتقليل الفراغ** */
         }
+
+        .header-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* يضمن تغطية الفيديو للمنطقة بالكامل */
+            z-index: -1; /* يوضع خلف المحتوى */
+            filter: brightness(0.8) grayscale(0.2); /* لجعل الفيديو أقل سطوعًا وأكثر هدوءًا */
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.4); /* طبقة شفافة سوداء لتوضيح النص */
+            z-index: 0; /* فوق الفيديو مباشرة */
+        }
+
+        .header-content {
+            position: relative; /* لضمان بقاء المحتوى فوق الفيديو والطبقة الشفافة */
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
+        .header-logo-circle {
+            width: 120px; /* حجم اللوجو الدائري */
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: var(--luminous-white);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 15px; /* مسافة تحت اللوجو */
+            box-shadow: 0 0 20px var(--bright-yellow), 0 0 40px var(--vibrant-orange); /* ظل قوي */
+            border: 4px solid var(--vibrant-orange); /* حد حول اللوجو */
+        }
+
+        .header-logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
 
         .main-title {
             font-family: 'Tajawal', sans-serif;
-            font-size: 3.5em; /* تم تصغيره */
+            font-size: 3.8em; /* تم تكبيره قليلاً */
             margin-bottom: 0;
-            color: var(--deep-orange);
-            text-shadow: 0 0 10px var(--bright-yellow), 0 0 20px var(--vibrant-orange); /* تم تصغيره */
+            color: var(--luminous-white); /* لون أبيض ليتناسب مع خلفية الفيديو الداكنة */
+            text-shadow: 0 0 12px var(--bright-yellow), 0 0 25px var(--vibrant-orange), 0 0 40px rgba(0,0,0,0.8); /* ظلال أقوى وداكنة */
             animation: titlePulse 2s infinite alternate;
         }
 
         @keyframes titlePulse {
-            from { transform: scale(1); text-shadow: 0 0 10px var(--bright-yellow); }
-            to { transform: scale(1.02); text-shadow: 0 0 15px var(--bright-yellow), 0 0 25px var(--vibrant-orange); } /* تم تصغيره */
+            from { transform: scale(1); text-shadow: 0 0 12px var(--bright-yellow), 0 0 25px var(--vibrant-orange), 0 0 40px rgba(0,0,0,0.8); }
+            to { transform: scale(1.03); text-shadow: 0 0 18px var(--bright-yellow), 0 0 30px var(--vibrant-orange), 0 0 50px rgba(0,0,0,0.8); } /* ظلال أقوى */
         }
 
         .main-title .highlight {
-            color: var(--luminous-white);
-            background: var(--gradient-main);
-            padding: 4px 15px; /* تم تصغيره */
-            border-radius: 15px; /* تم تصغيره */
-            box-shadow: 0 0 15px var(--bright-yellow); /* تم تصغيره */
+            color: var(--text-dark); /* لون داكن للنص المميز ليتناسب مع الخلفية الفاتحة */
+            background: var(--luminous-white); /* خلفية بيضاء */
+            padding: 5px 18px; /* تم تكبيره قليلاً */
+            border-radius: 18px; /* تم تكبيره قليلاً */
+            box-shadow: 0 0 18px var(--bright-yellow); /* ظل أقوى */
             display: inline-block;
             transform: rotate(-2deg);
         }
@@ -331,33 +387,33 @@
 
         /* حاوية المنيو */
         .menu-container {
-            padding-top: 140px; /* تم تعديله ليتناسب مع الهيدر المصغر */
-            padding-bottom: 40px; /* تم تصغيره */
+            padding-bottom: 50px; /* تم تكبيره قليلاً */
             min-height: 100vh;
             display: flex;
             justify-content: center;
             margin: 0 auto;
-            max-width: 1200px; /* نفس عرض main-content المصغر */
+            max-width: 1250px; /* نفس عرض main-content المكبر قليلاً */
+            /* padding-top: 260px; **تمت إزالة هذه القيمة ليتحكم بها JavaScript** */
         }
 
         /* --- تصميم الأكورديون العصري والشهي --- */
         .accordion-wrapper {
             width: 95%;
-            max-width: 900px; /* تم تصغيره */
-            margin-top: 30px; /* تم تصغيره */
-            border-radius: 20px; /* تم تصغيره */
+            max-width: 950px; /* تم تكبيره قليلاً */
+            margin-top: 40px; /* تم تكبيره قليلاً (هذه المسافة ستضاف فوق الـ padding-top الذي يحدده JS) */
+            border-radius: 25px; /* تم تكبيره قليلاً */
             background: var(--card-bg-light);
-            box-shadow: 0 12px 30px var(--shadow-intense); /* تم تصغيره */
+            box-shadow: 0 15px 35px var(--shadow-intense); /* ظل أقوى */
             overflow: hidden;
-            border: 2px solid var(--bright-yellow); /* تم تصغيره */
+            border: 3px solid var(--bright-yellow); /* حد أسمك */
         }
 
         .accordion-item {
-            margin-bottom: 10px; /* تم تصغيره */
-            border-radius: 15px; /* تم تصغيره */
+            margin-bottom: 12px; /* تم تكبيره قليلاً */
+            border-radius: 18px; /* تم تكبيره قليلاً */
             overflow: hidden;
-            box-shadow: 0 6px 15px var(--shadow-soft); /* تم تصغيره */
-            transition: all 0.3s ease-out; /* تم تقليل المدة */
+            box-shadow: 0 8px 20px var(--shadow-soft); /* ظل أقوى */
+            transition: all 0.3s ease-out;
             position: relative;
         }
         .accordion-item:last-child {
@@ -365,7 +421,7 @@
         }
 
         .accordion-item.active {
-            box-shadow: 0 10px 25px var(--shadow-intense), 0 0 20px var(--vibrant-orange); /* تم تصغيره */
+            box-shadow: 0 12px 30px var(--shadow-intense), 0 0 25px var(--vibrant-orange); /* ظلال أقوى */
             border-color: var(--vibrant-orange);
         }
 
@@ -373,36 +429,36 @@
             width: 100%;
             background: var(--gradient-main);
             color: var(--luminous-white);
-            padding: 18px 20px; /* تم تصغيره */
-            font-size: 1.5em; /* تم تصغيره */
+            padding: 20px 25px; /* تم تكبيره قليلاً */
+            font-size: 1.6em; /* تم تكبيره قليلاً */
             font-weight: 700;
             border: none;
             cursor: pointer;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            transition: all 0.25s ease-out; /* تم تقليل المدة */
-            text-shadow: 0 0 8px rgba(0,0,0,0.4); /* تم تصغيره */
-            border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* تم تصغيره */
+            transition: all 0.3s ease-out;
+            text-shadow: 0 0 10px rgba(0,0,0,0.5); /* ظل أقوى */
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* حد أسمك */
         }
         
         .accordion-header:hover {
             background: var(--gradient-reverse);
-            transform: translateY(-2px); /* تم تصغيره */
-            box-shadow: inset 0 0 15px rgba(255, 255, 255, 0.5); /* تم تصغيره */
+            transform: translateY(-3px); /* حركة أقوى */
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6); /* ظل أقوى */
         }
 
         .accordion-header .icon {
-            font-size: 1.1em; /* تم تصغيره */
-            margin-left: 10px; /* تم تصغيره */
+            font-size: 1.2em; /* تم تكبيره قليلاً */
+            margin-left: 12px; /* تم تكبيره قليلاً */
             color: var(--text-dark);
-            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.8)); /* تم تصغيره */
-            transition: all 0.25s ease; /* تم تقليل المدة */
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9)); /* ظل أقوى */
+            transition: all 0.3s ease;
         }
 
         .accordion-header .arrow-icon {
-            font-size: 1.2em; /* تم تصغيره */
-            transition: transform 0.25s ease; /* تم تقليل المدة */
+            font-size: 1.3em; /* تم تكبيره قليلاً */
+            transition: transform 0.3s ease;
             color: var(--luminous-white);
         }
 
@@ -413,28 +469,28 @@
         .accordion-content {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.25s ease-out, padding 0.25s ease-out; /* *** تم تقليل المدة بشكل كبير هنا *** */
-            padding: 0 20px; /* تم تصغيره */
+            transition: max-height 0.35s ease-out, padding 0.35s ease-out; /* مدة أطول قليلاً لانتقال أكثر سلاسة */
+            padding: 0 25px; /* تم تكبيره قليلاً */
             background: var(--card-bg-light);
             color: var(--text-dark);
         }
 
         .accordion-item.active .accordion-content {
-            max-height: 1500px; /* قيمة أكبر لضمان استيعاب المحتوى */
-            padding: 20px; /* تم تصغيره */
+            max-height: 1800px; /* قيمة أكبر لضمان استيعاب المحتوى */
+            padding: 25px; /* تم تكبيره قليلاً */
         }
 
         /* عنوان القسم داخل الأكورديون */
         .section-title {
             font-family: 'Tajawal', sans-serif;
-            font-size: 2em; /* تم تصغيره */
+            font-size: 2.2em; /* تم تكبيره قليلاً */
             color: var(--deep-orange);
             text-align: center;
-            margin-bottom: 30px; /* تم تصغيره */
-            text-shadow: 0 0 8px var(--bright-yellow); /* تم تصغيره */
+            margin-bottom: 35px; /* تم تكبيره قليلاً */
+            text-shadow: 0 0 10px var(--bright-yellow); /* ظل أقوى */
             position: relative;
-            padding-bottom: 15px; /* تم تصغيره */
-            border-bottom: 1px dashed rgba(255, 87, 34, 0.4); /* تم تصغيره */
+            padding-bottom: 18px; /* تم تكبيره قليلاً */
+            border-bottom: 2px dashed rgba(255, 87, 34, 0.5); /* حد أسمك */
         }
 
         .section-title::after {
@@ -443,95 +499,95 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 60px; /* تم تصغيره */
-            height: 3px; /* تم تصغيره */
+            width: 70px; /* تم تكبيره قليلاً */
+            height: 4px; /* تم تكبيره قليلاً */
             background: var(--gradient-main);
-            border-radius: 3px; /* تم تصغيره */
-            box-shadow: 0 0 8px var(--bright-yellow); /* تم تصغيره */
+            border-radius: 4px; /* تم تكبيره قليلاً */
+            box-shadow: 0 0 10px var(--bright-yellow); /* ظل أقوى */
         }
 
         /* شبكة المنتجات */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* تم تصغير minmax */
-            gap: 30px; /* تم تصغيره */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* تم تكبير minmax قليلاً */
+            gap: 35px; /* تم تكبيره قليلاً */
             justify-content: center;
         }
 
         .product-card {
             background: var(--luminous-white);
-            border-radius: 18px; /* تم تصغيره */
+            border-radius: 20px; /* تم تكبيره قليلاً */
             overflow: hidden;
             text-align: center;
-            padding: 20px; /* تم تصغيره */
-            box-shadow: 0 10px 25px var(--shadow-soft); /* تم تصغيره */
-            border: 1px solid var(--bright-yellow); /* تم تصغيره */
-            transition: transform 0.25s ease-out, box-shadow 0.25s ease, border-color 0.25s ease; /* تم تقليل المدة */
+            padding: 25px; /* تم تكبيره قليلاً */
+            box-shadow: 0 12px 30px var(--shadow-soft); /* ظل أقوى */
+            border: 2px solid var(--bright-yellow); /* حد أسمك */
+            transition: transform 0.3s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative;
             z-index: 1;
         }
 
         .product-card:hover {
-            transform: translateY(-8px) scale(1.02); /* تم تصغيره */
-            box-shadow: 0 15px 35px var(--shadow-intense), 0 0 25px var(--vibrant-orange); /* تم تصغيره */
+            transform: translateY(-10px) scale(1.03); /* حركة أكبر */
+            box-shadow: 0 18px 40px var(--shadow-intense), 0 0 30px var(--vibrant-orange); /* ظلال أقوى */
             border-color: var(--vibrant-orange);
         }
 
         .product-card img {
             width: 100%;
-            height: 160px; /* تم تصغيره */
+            height: 180px; /* تم تكبيره قليلاً */
             object-fit: cover;
-            border-radius: 15px; /* تم تصغيره */
-            margin-bottom: 15px; /* تم تصغيره */
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* تم تصغيره */
-            border: 3px solid var(--bright-yellow); /* تم تصغيره */
-            transition: transform 0.25s ease, border-color 0.25s ease; /* تم تقليل المدة */
+            border-radius: 18px; /* تم تكبيره قليلاً */
+            margin-bottom: 18px; /* تم تكبيره قليلاً */
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* ظل أقوى */
+            border: 4px solid var(--bright-yellow); /* حد أسمك */
+            transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .product-card:hover img {
-            transform: scale(1.01); /* تم تصغيره */
+            transform: scale(1.02); /* حركة أكبر */
             border-color: var(--vibrant-orange);
         }
 
         .product-card h3 {
             font-family: 'Tajawal', sans-serif;
-            font-size: 1.6em; /* تم تصغيره */
+            font-size: 1.8em; /* تم تكبيره قليلاً */
             color: var(--deep-orange);
-            margin-bottom: 8px; /* تم تصغيره */
-            text-shadow: 0 0 6px rgba(0,0,0,0.2); /* تم تصغيره */
+            margin-bottom: 10px; /* تم تكبيره قليلاً */
+            text-shadow: 0 0 8px rgba(0,0,0,0.3); /* ظل أقوى */
         }
 
         .product-card .new-tag {
             background: var(--vibrant-orange);
             color: var(--luminous-white);
-            font-size: 0.7em; /* تم تصغيره */
-            padding: 3px 6px; /* تم تصغيره */
-            border-radius: 5px; /* تم تصغيره */
+            font-size: 0.8em; /* تم تكبيره قليلاً */
+            padding: 4px 8px; /* تم تكبيره قليلاً */
+            border-radius: 6px; /* تم تكبيره قليلاً */
             vertical-align: super;
-            margin-right: 5px; /* تم تصغيره */
-            box-shadow: 0 0 8px var(--vibrant-orange); /* تم تصغيره */
+            margin-right: 6px; /* تم تكبيره قليلاً */
+            box-shadow: 0 0 10px var(--vibrant-orange); /* ظل أقوى */
             animation: newTagBounce 1s infinite alternate;
         }
 
         @keyframes newTagBounce {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-2px); } /* تم تصغيره */
+            100% { transform: translateY(-3px); } /* حركة أكبر */
         }
 
         .product-card p {
-            font-size: 0.95em; /* تم تصغيره */
+            font-size: 1em; /* تم تكبيره قليلاً */
             color: var(--text-dark);
-            margin-bottom: 12px; /* تم تصغيره */
+            margin-bottom: 15px; /* تم تكبيره قليلاً */
         }
 
         .product-card .price {
             font-family: 'Cairo', sans-serif;
-            font-size: 1.8em; /* تم تصغيره */
+            font-size: 2em; /* تم تكبيره قليلاً */
             font-weight: 900;
             color: var(--vibrant-orange);
             display: block;
-            margin-bottom: 20px; /* تم تصغيره */
-            text-shadow: 0 0 8px var(--bright-yellow); /* تم تصغيره */
+            margin-bottom: 25px; /* تم تكبيره قليلاً */
+            text-shadow: 0 0 10px var(--bright-yellow); /* ظل أقوى */
         }
 
         .order-button {
@@ -540,16 +596,16 @@
             justify-content: center;
             background: var(--gradient-main);
             color: var(--luminous-white);
-            padding: 12px 25px; /* تم تصغيره */
-            border-radius: 30px; /* تم تصغيره */
+            padding: 14px 30px; /* تم تكبيره قليلاً */
+            border-radius: 35px; /* تم تكبيره قليلاً */
             font-weight: bold;
-            font-size: 1em; /* تم تصغيره */
-            box-shadow: 0 6px 15px var(--shadow-intense); /* تم تصغيره */
-            transition: all 0.25s ease-out; /* تم تقليل المدة */
+            font-size: 1.1em; /* تم تكبيره قليلاً */
+            box-shadow: 0 8px 20px var(--shadow-intense); /* ظل أقوى */
+            transition: all 0.3s ease-out;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.8px; /* تباعد أحرف أكبر قليلاً */
             position: relative;
             overflow: hidden;
         }
@@ -561,8 +617,8 @@
             left: -100%;
             width: 40%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.4);
-            transition: left 0.3s ease-out; /* تم تقليل المدة */
+            background: rgba(255, 255, 255, 0.5); /* توهج أقوى */
+            transition: left 0.3s ease-out;
             transform: skewX(-20deg);
         }
 
@@ -571,207 +627,319 @@
         }
 
         .order-button i {
-            margin-right: 8px; /* تم تصغيره */
-            transition: transform 0.25s ease; /* تم تقليل المدة */
+            margin-right: 10px; /* تم تكبيره قليلاً */
+            transition: transform 0.3s ease;
         }
 
         .order-button:hover {
             background: var(--gradient-reverse);
-            transform: translateY(-3px); /* تم تصغيره */
-            box-shadow: 0 9px 20px var(--shadow-intense), 0 0 15px var(--bright-yellow); /* تم تصغيره */
+            transform: translateY(-4px); /* حركة أكبر */
+            box-shadow: 0 12px 25px var(--shadow-intense), 0 0 18px var(--bright-yellow); /* ظلال أقوى */
         }
 
         .order-button:hover i {
-            transform: translateX(4px); /* تم تصغيره */
+            transform: translateX(5px); /* حركة أكبر */
+        }
+        
+        /* --- حقوق الطبع والنشر (مع زر الانستجرام داخلها) --- */
+        .footer {
+            text-align: center;
+            padding: 25px;
+            background: var(--deep-orange); /* لون أعمق للخلفية */
+            color: var(--text-light);
+            font-size: 0.95em;
+            margin-top: 50px; /* مسافة من المحتوى الذي يسبقه */
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.3); /* ظل علوي */
+            display: flex; /* لترتيب المحتوى داخله */
+            flex-direction: column; /* ليكون الزر والنص فوق بعضهما */
+            align-items: center; /* توسيط أفقي */
+            gap: 15px; /* مسافة بين العناصر */
+        }
+
+        .footer .instagram-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px; /* حجم ثابت صغير للزر */
+            height: 60px; /* حجم ثابت صغير للزر */
+            border-radius: 50%; /* لجعل الزر دائري */
+            background: var(--vibrant-orange); /* خلفية برتقالية */
+            color: var(--luminous-white);
+            font-size: 2.2em; /* حجم كبير للأيقونة */
+            text-decoration: none;
+            box-shadow: 0 0 15px var(--bright-yellow), 0 0 30px var(--vibrant-orange); /* توهج برتقالي/أصفر */
+            transition: all 0.3s ease-in-out;
+            border: 3px solid var(--luminous-white); /* حد أبيض لبروز أكبر */
+        }
+
+        .footer .instagram-button:hover {
+            transform: scale(1.1); /* تكبير عند التحويم */
+            box-shadow: 0 0 25px var(--bright-yellow), 0 0 50px var(--vibrant-orange); /* توهج أقوى */
+        }
+
+        /* إخفاء النص داخل الزر (تمت إزالته من HTML أيضاً) */
+        .footer .instagram-button span {
+            display: none; 
         }
 
         /* --- التجاوبية الاحترافية (Responsive Design) --- */
         /* تصميم موجه للهواتف أولاً (Mobile-First) */
 
         body {
-            font-size: 14px; /* حجم خط أساسي أصغر للهواتف */
+            font-size: 15px; /* حجم خط أساسي أكبر قليلاً للهواتف */
         }
 
         .header {
-            padding: 20px 8px; /* تم تصغيره */
-            border-radius: 0 0 20px 20px; /* تم تصغيره */
+            padding: 25px 10px; /* تم تكبيره قليلاً */
+            border-radius: 0 0 25px 25px; /* تم تكبيره قليلاً */
+            height: 180px; /* **ارتفاع الهيدر على الموبايل** */
+        }
+
+        .header-logo-circle {
+            width: 90px; /* حجم اللوجو الدائري على الموبايل */
+            height: 90px;
+            margin-bottom: 10px;
         }
 
         .main-title {
-            font-size: 1.8em; /* تم تصغيره */
+            font-size: 2em; /* تم تكبيره قليلاً */
         }
 
         .intro-logo {
-            width: 120px; /* حجم أصغر للوجو على الهواتف */
-            height: 120px;
-            margin-bottom: 15px; /* تم تصغيره */
+            width: 130px; /* حجم أكبر قليلاً للوجو على الهواتف */
+            height: 130px;
+            margin-bottom: 20px; /* تم تكبيره قليلاً */
         }
 
         .intro-text {
-            font-size: 1.8em; /* حجم نص Intro أصغر على الهواتف */
+            font-size: 2em; /* حجم نص Intro أكبر قليلاً على الهواتف */
         }
         .loading-text {
-            font-size: 1em; /* حجم نص التحميل على الموبايل */
-            margin-top: 10px; /* تم تصغيره */
+            font-size: 1.1em; /* حجم نص التحميل على الموبايل */
+            margin-top: 15px; /* تم تكبيره قليلاً */
         }
         .loading-bar-container {
-            width: 80%; /* عرض أكبر على الموبايل */
-            margin-top: 15px; /* تم تصغيره */
-            height: 6px; /* تم تصغيره */
+            width: 85%; /* عرض أكبر قليلاً على الموبايل */
+            margin-top: 20px; /* تم تكبيره قليلاً */
+            height: 7px; /* تم تكبيره قليلاً */
         }
 
 
         .menu-container {
-            padding-top: 100px; /* ليتناسب مع الهيدر الثابت المصغر على الجوال */
-            padding-bottom: 30px; /* تم تصغيره */
+            /* padding-top: 190px; **تمت إزالة هذه القيمة ليتحكم بها JavaScript** */
+            padding-bottom: 35px; /* تم تكبيره قليلاً */
         }
 
         .accordion-wrapper {
-            margin-top: 15px; /* تم تصغيره */
-            border-radius: 15px; /* تم تصغيره */
+            margin-top: 20px; /* تم تكبيره قليلاً */
+            border-radius: 18px; /* تم تكبيره قليلاً */
             width: 98%; /* عرض أكبر على الهواتف */
         }
 
         .accordion-header {
-            font-size: 1.1em; /* تم تصغيره */
-            padding: 10px 12px; /* تم تصغيره */
+            font-size: 1.2em; /* تم تكبيره قليلاً */
+            padding: 12px 15px; /* تم تكبيره قليلاً */
         }
 
         .accordion-header .icon {
-            margin-left: 8px; /* تم تصغيره */
-            font-size: 0.9em; /* تم تصغيره */
+            margin-left: 10px; /* تم تكبيره قليلاً */
+            font-size: 1em; /* تم تكبيره قليلاً */
         }
 
         .accordion-header .arrow-icon {
-            font-size: 1em; /* تم تصغيره */
+            font-size: 1.1em; /* تم تكبيره قليلاً */
         }
 
         .accordion-content {
-            padding: 0 10px; /* تم تصغيره */
+            padding: 0 12px; /* تم تكبيره قليلاً */
         }
 
         .accordion-item.active .accordion-content {
-            padding: 10px; /* تم تصغيره */
+            padding: 12px; /* تم تكبيره قليلاً */
         }
 
         .section-title {
-            font-size: 1.4em; /* تم تصغيره */
-            margin-bottom: 20px; /* تم تصغيره */
+            font-size: 1.6em; /* تم تكبيره قليلاً */
+            margin-bottom: 25px; /* تم تكبيره قليلاً */
         }
 
         .products-grid {
             grid-template-columns: 1fr; /* عمود واحد دائمًا على الجوال */
-            gap: 15px; /* تم تصغيره */
+            gap: 20px; /* تم تكبيره قليلاً */
         }
 
         .product-card {
-            padding: 15px; /* تم تصغيره */
-            border-radius: 12px; /* تم تصغيره */
+            padding: 18px; /* تم تكبيره قليلاً */
+            border-radius: 15px; /* تم تكبيره قليلاً */
         }
 
         .product-card img {
-            height: 100px; /* تم تصغيره */
-            margin-bottom: 10px; /* تم تصغيره */
-            border-radius: 10px; /* تم تصغيره */
+            height: 110px; /* تم تكبيره قليلاً */
+            margin-bottom: 12px; /* تم تكبيره قليلاً */
+            border-radius: 12px; /* تم تكبيره قليلاً */
         }
 
         .product-card h3 {
-            font-size: 1.2em; /* تم تصغيره */
+            font-size: 1.3em; /* تم تكبيره قليلاً */
         }
 
         .product-card p {
-            font-size: 0.8em; /* تم تصغيره */
-            margin-bottom: 8px;
+            font-size: 0.9em; /* تم تكبيره قليلاً */
+            margin-bottom: 10px;
         }
 
         .product-card .price {
-            font-size: 1.2em; /* تم تصغيره */
-            margin-bottom: 15px;
+            font-size: 1.4em; /* تم تكبيره قليلاً */
+            margin-bottom: 18px;
         }
 
         .order-button {
-            padding: 6px 15px; /* تم تصغيره */
-            font-size: 0.7em; /* تم تصغيره */
+            padding: 8px 18px; /* تم تكبيره قليلاً */
+            font-size: 0.8em; /* تم تكبيره قليلاً */
         }
+
+        .footer {
+            margin-top: 30px;
+            padding: 20px;
+            font-size: 0.85em;
+            gap: 10px; /* مسافة أصغر للهواتف */
+        }
+        .footer .instagram-button {
+            width: 50px;
+            height: 50px;
+            font-size: 1.8em;
+        }
+
 
         /* تعديلات للأجهزة اللوحية وما فوق (Tablet and larger) */
         @media (min-width: 768px) {
-            body { font-size: 16px; } /* حجم خط أكبر للأجهزة اللوحية */
-            .header { padding: 25px 10px; border-radius: 0 0 30px 30px; }
-            .main-title { font-size: 2.5em; }
-            .intro-logo { width: 150px; height: 150px; }
-            .intro-text { font-size: 2.5em; }
+            body { font-size: 17px; } /* حجم خط أكبر للأجهزة اللوحية */
+            .header { 
+                padding: 30px 15px; 
+                border-radius: 0 0 35px 35px; 
+                height: 200px; /* **ارتفاع الهيدر على التابلت** */
+            }
+            .header-logo-circle {
+                width: 100px;
+                height: 100px;
+                margin-bottom: 12px;
+            }
+            .main-title { font-size: 3em; }
+            .intro-logo { width: 160px; height: 160px; }
+            .intro-text { font-size: 3em; }
             .loading-text {
-                font-size: 1.2em;
-                margin-top: 15px;
+                font-size: 1.3em;
+                margin-top: 20px;
             }
             .loading-bar-container {
-                width: 70%;
-                margin-top: 20px;
-                height: 8px;
+                width: 75%;
+                margin-top: 25px;
+                height: 10px;
             }
             .menu-container { 
-                padding-top: 120px; /* ليتناسب مع الهيدر الثابت المصغر على التابلت */
-                padding-bottom: 40px; 
+                /* padding-top: 210px; **تمت إزالة هذه القيمة ليتحكم بها JavaScript** */
+                padding-bottom: 45px; 
             }
-            .accordion-wrapper { max-width: 800px; margin-top: 20px; border-radius: 18px; }
-            .accordion-header { padding: 15px 18px; font-size: 1.3em; }
-            .accordion-header .icon { margin-left: 10px; font-size: 1em; }
-            .accordion-header .arrow-icon { font-size: 1.1em; }
-            .accordion-content { padding: 0 15px; }
-            .accordion-item.active .accordion-content { padding: 15px; }
-            .section-title { font-size: 1.6em; margin-bottom: 25px; }
-            .products-grid { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; } /* عمودين أو أكثر */
-            .product-card { padding: 18px; border-radius: 15px; }
-            .product-card img { height: 120px; margin-bottom: 12px; border-radius: 12px; }
-            .product-card h3 { font-size: 1.4em; }
-            .product-card p { font-size: 0.9em; }
-            .product-card .price { font-size: 1.5em; }
-            .order-button { padding: 10px 22px; font-size: 0.9em; }
+            .accordion-wrapper { max-width: 850px; margin-top: 30px; border-radius: 22px; }
+            .accordion-header { padding: 18px 22px; font-size: 1.4em; }
+            .accordion-header .icon { margin-left: 12px; font-size: 1.1em; }
+            .accordion-header .arrow-icon { font-size: 1.2em; }
+            .accordion-content { padding: 0 18px; }
+            .accordion-item.active .accordion-content { padding: 18px; }
+            .section-title { font-size: 1.8em; margin-bottom: 30px; }
+            .products-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; } /* عمودين أو أكثر */
+            .product-card { padding: 20px; border-radius: 18px; }
+            .product-card img { height: 140px; margin-bottom: 15px; border-radius: 15px; }
+            .product-card h3 { font-size: 1.5em; }
+            .product-card p { font-size: 0.95em; }
+            .product-card .price { font-size: 1.7em; }
+            .order-button { padding: 12px 25px; font-size: 1em; }
+            .footer {
+                margin-top: 40px;
+                padding: 22px;
+                font-size: 0.9em;
+                gap: 15px;
+            }
+            .footer .instagram-button {
+                width: 60px;
+                height: 60px;
+                font-size: 2.2em;
+            }
         }
 
         /* تعديلات للشاشات الكبيرة (Desktop) */
         @media (min-width: 992px) {
-            .header { padding: 30px 15px; border-radius: 0 0 40px 40px; }
-            .main-title { font-size: 3em; }
-            .intro-text { font-size: 3em; }
-            .accordion-wrapper { max-width: 900px; margin-top: 30px; }
-            .accordion-header { padding: 18px 20px; font-size: 1.5em; }
-            .accordion-header .icon { margin-left: 12px; font-size: 1.1em; }
-            .accordion-header .arrow-icon { font-size: 1.2em; }
-            .accordion-content { padding: 0 20px; }
-            .accordion-item.active .accordion-content { padding: 20px; }
-            .section-title { font-size: 2em; margin-bottom: 30px; }
-            .products-grid { gap: 25px; }
-            .product-card { padding: 20px; }
-            .product-card img { height: 160px; }
-            .product-card h3 { font-size: 1.6em; }
-            .product-card .price { font-size: 1.8em; }
-            .order-button { padding: 12px 25px; font-size: 1em; }
-        }
-
-        @media (min-width: 1200px) {
-            .main-title { font-size: 3.5em; }
-            .intro-text { font-size: 3em; }
-            .loading-text {
-                font-size: 1.2em;
+            .header { 
+                padding: 35px 20px; 
+                border-radius: 0 0 45px 45px; 
+                height: 250px; /* **ارتفاع الهيدر على الديسكتوب** */
             }
-            .accordion-wrapper { max-width: 1000px; }
-            .accordion-header { font-size: 1.6em; padding: 20px 25px; }
-            .section-title { font-size: 2.2em; }
+            .header-logo-circle {
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px;
+            }
+            .main-title { font-size: 3.8em; }
+            .intro-text { font-size: 3.2em; }
+            .accordion-wrapper { max-width: 950px; margin-top: 40px; }
+            .accordion-header { padding: 20px 25px; font-size: 1.6em; }
+            .accordion-header .icon { margin-left: 15px; font-size: 1.2em; }
+            .accordion-header .arrow-icon { font-size: 1.3em; }
+            .accordion-content { padding: 0 25px; }
+            .accordion-item.active .accordion-content { padding: 25px; }
+            .section-title { font-size: 2.2em; margin-bottom: 35px; }
             .products-grid { gap: 30px; }
             .product-card { padding: 25px; }
             .product-card img { height: 180px; }
             .product-card h3 { font-size: 1.8em; }
             .product-card .price { font-size: 2em; }
             .order-button { padding: 14px 30px; font-size: 1.1em; }
+            .footer {
+                margin-top: 50px;
+                padding: 25px;
+                font-size: 0.95em;
+            }
+            .footer .instagram-button {
+                width: 70px;
+                height: 70px;
+                font-size: 2.5em;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .header {
+                height: 300px; /* **ارتفاع الهيدر على الشاشات الكبيرة جداً** */
+            }
+            .header-logo-circle {
+                width: 140px;
+                height: 140px;
+                margin-bottom: 20px;
+            }
+            .main-title { font-size: 4em; }
+            .intro-text { font-size: 3.5em; }
+            .loading-text {
+                font-size: 1.4em;
+            }
+            .accordion-wrapper { max-width: 1050px; }
+            .accordion-header { font-size: 1.7em; padding: 22px 28px; }
+            .section-title { font-size: 2.4em; }
+            .products-grid { gap: 35px; }
+            .product-card { padding: 30px; }
+            .product-card img { height: 200px; }
+            .product-card h3 { font-size: 2em; }
+            .product-card .price { font-size: 2.2em; }
+            .order-button { padding: 16px 35px; font-size: 1.2em; }
+            .footer .instagram-button {
+                width: 80px;
+                height: 80px;
+                font-size: 2.8em;
+            }
         }
     </style>
 </head>
 <body>
 
-    
-<div id="intro-screen">
+    <div id="intro-screen">
         <div class="intro-burst-container"></div>
         <div class="intro-logo">
             <img src="https://ia600906.us.archive.org/24/items/city-fries-logo/City%20Fries%20Logo.jpg" alt="شعار بطاطا المدينة">
@@ -783,21 +951,26 @@
         </div>
     </div>
 
-    
-<div id="animated-full-background"></div>
+    <div id="animated-full-background"></div>
 
-    
-<div id="main-content" class="hidden">
-        
-<header class="header" id="main-header">
-            <h1 class="main-title">قائمة طعام <span class="highlight">بطاطا المدينة</span></h1>
+    <div id="main-content" class="hidden">
+        <header class="header" id="main-header">
+            <video autoplay loop muted playsinline class="header-video" poster="https://via.placeholder.com/1920x1080/FF5722/FFFFFF?text=Video+Loading">
+                <source src="https://cdn.pixabay.com/video/2021/04/14/71119-537976857_large.mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="video-overlay"></div>
+            <div class="header-content">
+                <div class="header-logo-circle">
+                    <img src="https://ia600906.us.archive.org/24/items/city-fries-logo/City%20Fries%20Logo.jpg" alt="شعار بطاطا المدينة">
+                </div>
+                <h1 class="main-title"><span class="highlight">بطاطا المدينة</span></h1>
+            </div>
         </header>
 
         <main class="menu-container">
-            
-<div class="accordion-wrapper">
-                
-<div class="accordion-item">
+            <div class="accordion-wrapper">
+                <div class="accordion-item">
                     <button class="accordion-header" data-target="fries-content">
                         <span class="icon">🍟</span>
                         <span class="title">البطاطا المذهلة</span>
@@ -837,8 +1010,7 @@
                     </div>
                 </div>
 
-                
-<div class="accordion-item">
+                <div class="accordion-item">
                     <button class="accordion-header" data-target="burgers-content">
                         <span class="icon">🍔</span>
                         <span class="title">البرجر الشهي</span>
@@ -869,8 +1041,7 @@
                     </div>
                 </div>
 
-                
-<div class="accordion-item">
+                <div class="accordion-item">
                     <button class="accordion-header" data-target="drinks-content">
                         <span class="icon">🥤</span>
                         <span class="title">المشروبات المنعشة</span>
@@ -901,8 +1072,7 @@
                     </div>
                 </div>
 
-                
-<div class="accordion-item">
+                <div class="accordion-item">
                     <button class="accordion-header" data-target="sauces-content">
                         <span class="icon">🌶️</span>
                         <span class="title">الصوصات المميزة</span>
@@ -933,11 +1103,17 @@
                     </div>
                 </div>
             </div> 
-</main>
+        </main>
+
+        <footer class="footer">
+            <a href="https://www.instagram.com/laithdeveloper/" target="_blank" class="instagram-button">
+                <i class="fab fa-instagram"></i> 
+            </a>
+            <p>&copy; 2025 حقوق الطبع والنشر ل Laith AL-Arabiat</p>
+        </footer>
     </div>
 
-    
-<script>
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const introScreen = document.getElementById('intro-screen');
             const introBurstContainer = document.querySelector('.intro-burst-container');
@@ -946,33 +1122,34 @@
             const animatedFullBackground = document.getElementById('animated-full-background');
             const accordionHeaders = document.querySelectorAll('.accordion-header');
             const accordionItems = document.querySelectorAll('.accordion-item');
+            const menuContainer = document.querySelector('.menu-container');
 
             const foodParticlesEmojis = ['🍔', '🍟'];
 
             // --- 1. شاشة المقدمة كشاشة تحميل ---
             const createBurstParticles = () => {
-                const numBurstParticles = 30;
+                const numBurstParticles = 35; // تم تكبيره قليلاً
                 for (let i = 0; i < numBurstParticles; i++) {
                     const particle = document.createElement('span');
                     particle.classList.add('intro-burst-particle');
                     particle.textContent = foodParticlesEmojis[Math.floor(Math.random() * foodParticlesEmojis.length)];
 
-                    const size = Math.random() * 30 + 20; // تم تصغيره
+                    const size = Math.random() * 35 + 25; // تم تكبيره قليلاً
                     particle.style.fontSize = `${size}px`;
 
                     const angle = Math.random() * 2 * Math.PI;
-                    const radius = Math.random() * 150 + 80; // تم تصغيره
+                    const radius = Math.random() * 180 + 100; // تم تكبيره قليلاً
 
                     particle.style.setProperty('--x-offset', `${Math.cos(angle) * radius}px`);
                     particle.style.setProperty('--y-offset', `${Math.sin(angle) * radius}px`);
-                    particle.style.animationDelay = `${Math.random() * 0.4}s`; // تم تصغيره
+                    particle.style.animationDelay = `${Math.random() * 0.5}s`; // تم تكبيره قليلاً
                     introBurstContainer.appendChild(particle);
                 }
             };
 
             setTimeout(() => {
                 createBurstParticles();
-            }, 400); // تم تصغيره
+            }, 500); // تم تكبيره قليلاً
 
             setTimeout(() => {
                 introScreen.classList.add('hidden');
@@ -980,22 +1157,23 @@
                 mainContent.classList.add('visible');
                 createBackgroundParticles();
                 
-                // تم إزالة الكود لفتح أول قسم في الأكورديون تلقائيًا
-                // if (accordionHeaders.length > 0) {
-                //     toggleAccordion(accordionHeaders[0]);
-                // }
-            }, 3500); // تم تصغير إجمالي مدة شاشة المقدمة
+                // تحديث padding-top للمنيو بعد ظهور الهيدر وتحديد حجمه النهائي
+                adjustMenuPadding(); 
+                // إضافة معالج حدث لتحديث padding عند تغيير حجم الشاشة
+                window.addEventListener('resize', adjustMenuPadding);
+
+            }, 4000); // تم تكبير إجمالي مدة شاشة المقدمة قليلاً
 
 
             // --- 2. جزيئات الخلفية المتحركة (برجر وبطاطا) ---
             function createBackgroundParticles() {
-                const numParticles = 25; // تم تصغيره
+                const numParticles = 30; // تم تكبيره قليلاً
                 for (let i = 0; i < numParticles; i++) {
                     const particle = document.createElement('span');
                     particle.classList.add('food-particle');
                     particle.textContent = foodParticlesEmojis[Math.floor(Math.random() * foodParticlesEmojis.length)];
 
-                    const size = Math.random() * 15 + 15; // تم تصغيره
+                    const size = Math.random() * 20 + 20; // تم تكبيره قليلاً
                     particle.style.fontSize = `${size}px`;
 
                     const startX = Math.random() * 100;
@@ -1003,7 +1181,7 @@
                     const endX = Math.random() * 100;
                     const endY = Math.random() * 100;
 
-                    const rotateEnd = Math.random() * 600 + 300; // تم تصغيره
+                    const rotateEnd = Math.random() * 720 + 360; // تم تكبيره قليلاً
 
                     particle.style.setProperty('--x-start', `${startX}vw`);
                     particle.style.setProperty('--y-start', `${startY}vh`);
@@ -1011,11 +1189,18 @@
                     particle.style.setProperty('--y-end', `${endY}vh`);
                     particle.style.setProperty('--rotate-end', `${rotateEnd}deg`);
 
-                    particle.style.animationDelay = `${Math.random() * 15}s`; // تم تصغيره
-                    particle.style.animationDuration = `${Math.random() * 15 + 25}s`; // تم تصغيره
+                    particle.style.animationDelay = `${Math.random() * 20}s`; // تم تكبيره قليلاً
+                    particle.style.animationDuration = `${Math.random() * 20 + 30}s`; // تم تكبيره قليلاً
 
                     animatedFullBackground.appendChild(particle);
                 }
+            }
+
+            // --- وظيفة لضبط المسافة تحت الهيدر ---
+            function adjustMenuPadding() {
+                const headerHeight = mainHeader.offsetHeight;
+                // قم بتقليل القيمة المضافة هنا إلى 0 أو 5 أو 10 حسب الرغبة للحصول على المسافة المطلوبة
+                menuContainer.style.paddingTop = `${headerHeight + 0}px`; 
             }
 
 
@@ -1036,8 +1221,6 @@
                     content.style.maxHeight = 0;
                 } else {
                     parentItem.classList.add('active');
-                    // لضمان عمل الـ transition بشكل صحيح، ننتظر تحديث الـ maxHeight
-                    // يمكن استخدام setTimeout صغير لضمان ذلك، أو الاعتماد على أن المتصفح سيتعامل معها
                     content.style.maxHeight = content.scrollHeight + 'px'; 
                 }
             };
@@ -1051,7 +1234,7 @@
             orderButtons.forEach(button => {
                 button.addEventListener('click', (event) => {
                     event.stopPropagation();
-                    const phoneNumber = '0790586053'; // الرقم الذي طلبته
+                    const phoneNumber = '0790586053'; 
                     const telLink = `tel:${phoneNumber}`;
                     window.location.href = telLink;
 
