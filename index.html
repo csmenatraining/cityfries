@@ -166,6 +166,25 @@ Your browser does not support the video tag.
 </div>
 <script>document.addEventListener('DOMContentLoaded',()=>{const introScreen=document.getElementById('intro-screen');const introBurstContainer=document.querySelector('.intro-burst-container');const mainContent=document.getElementById('main-content');const mainHeader=document.getElementById('main-header');const animatedFullBackground=document.getElementById('animated-full-background');const navTabButtons=document.querySelectorAll('.nav-tab-button');const menuSections=document.querySelectorAll('.menu-section');const menuContainer=document.querySelector('.menu-container');const foodParticlesEmojis=['🍔','🍟'];const createBurstParticles=()=>{const numBurstParticles=35;for(let i=0;i<numBurstParticles;i++){const particle=document.createElement('span');particle.classList.add('intro-burst-particle');particle.textContent=foodParticlesEmojis[Math.floor(Math.random()*foodParticlesEmojis.length)];const size=Math.random()*35+25;particle.style.fontSize=`${size}px`;const angle=Math.random()*2*Math.PI;const radius=Math.random()*180+100;particle.style.setProperty('--x-offset',`${Math.cos(angle)*radius}px`);particle.style.setProperty('--y-offset',`${Math.sin(angle)*radius}px`);particle.style.animationDelay=`${Math.random()*0.5}s`;introBurstContainer.appendChild(particle);}};setTimeout(()=>{createBurstParticles();},500);setTimeout(()=>{introScreen.classList.add('hidden');mainContent.classList.remove('hidden');mainContent.classList.add('visible');createBackgroundParticles();},4000);function createBackgroundParticles(){const numParticles=30;for(let i=0;i<numParticles;i++){const particle=document.createElement('span');particle.classList.add('food-particle');particle.textContent=foodParticlesEmojis[Math.floor(Math.random()*foodParticlesEmojis.length)];const size=Math.random()*20+20;particle.style.fontSize=`${size}px`;const startX=Math.random()*100;const startY=Math.random()*100;const endX=Math.random()*100;const endY=Math.random()*100;const rotateEnd=Math.random()*720+360;particle.style.setProperty('--x-start',`${startX}vw`);particle.style.setProperty('--y-start',`${startY}vh`);particle.style.setProperty('--x-end',`${endX}vw`);particle.style.setProperty('--y-end',`${endY}vh`);particle.style.setProperty('--rotate-end',`${rotateEnd}deg`);particle.style.animationDelay=`${Math.random()*20}s`;particle.style.animationDuration=`${Math.random()*20+30}s`;animatedFullBackground.appendChild(particle);}}
 const switchSection=(targetId)=>{navTabButtons.forEach(button=>button.classList.remove('active'));menuSections.forEach(section=>section.classList.remove('active'));const activeButton=document.querySelector(`.nav-tab-button[data-target="${targetId}"]`);const activeSection=document.getElementById(targetId);if(activeButton){activeButton.classList.add('active');}
-if(activeSection){activeSection.classList.add('active');}};navTabButtons.forEach(button=>{button.addEventListener('click',()=>{const targetId=button.dataset.target;switchSection(targetId);});});switchSection('fries-section');const orderButtons=document.querySelectorAll('.order-button');orderButtons.forEach(button=>{button.addEventListener('click',(event)=>{event.stopPropagation();const phoneNumber='0790586053';const telLink=`tel:${phoneNumber}`;window.location.href=telLink;});});});</script>
+if(activeSection){activeSection.classList.add('active');}};navTabButtons.forEach(button=>{button.addEventListener('click',()=>{const targetId=button.dataset.target;switchSection(targetId);});});switchSection('fries-section');const orderButtons=document.querySelectorAll('.order-button');orderButtons.forEach(button=>{button.addEventListener('click',(event)=>{event.stopPropagation();const phoneNumber='0790586053';const telLink=`tel:${phoneNumber}`;window.location.href=telLink;});});
+
+// **START OF NEW CODE FOR VIDEO RESTART**
+const headerVideo = document.querySelector('.header-video');
+
+// Attempt to play the video when the document becomes visible
+document.addEventListener('visibilitychange', () => {
+    if (document.visibilityState === 'visible') {
+        if (headerVideo) {
+            headerVideo.play().catch(e => {
+                // Autoplay might be blocked if user interaction wasn't the direct cause of returning.
+                // This catch handles the promise rejection in such cases.
+                console.warn('Video autoplay prevented on visibility change:', e);
+            });
+        }
+    }
+});
+// **END OF NEW CODE**
+
+});</script>
 </body>
 </html>
