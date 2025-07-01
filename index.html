@@ -24,6 +24,18 @@
             --gradient-reverse: linear-gradient(135deg, var(--bright-yellow) 0%, var(--vibrant-orange) 100%);
             --bg-glow-start: rgba(255, 193, 7, 0.9); /* توهج الخلفية، أقوى */
             --bg-glow-end: rgba(255, 87, 34, 0.9);
+
+            /* ألوان وتوهجات جديدة للهيدر والتبويبات (معدلة للفيديو) */
+            --header-bg-overlay: rgba(255, 165, 0, 0.3); /* طبقة تراكب أصفر برتقالي شفافة فوق الفيديو */
+            --header-border-bottom: #FFBB00; /* أصفر برتقالي ساطع */
+            --header-shadow: rgba(0, 0, 0, 0.5); /* ظل معتدل وقوي قليلاً */
+            --tab-bg: #F0F0F0; /* خلفية التبويبات رمادية فاتحة */
+            --tab-border: #FFBB00; /* حد أصفر برتقالي */
+            --tab-text: #555555; /* لون نص التبويبات */
+            --tab-active-bg: linear-gradient(to right, #FFC107, #FF9800); /* تدرج نشط */
+            --tab-active-text: #FFFFFF; /* نص أبيض للنشط */
+            --tab-active-shadow: 0 5px 15px rgba(255, 165, 0, 0.6); /* ظل تبويب نشط */
+            --category-section-bg: #FFFFFF; /* خلفية بيضاء لأقسام الفئات */
         }
 
         /* إعادة تعيين أساسي لجميع العناصر */
@@ -41,7 +53,7 @@
             overflow-x: hidden;
             direction: rtl;
             text-align: right;
-            font-size: 17px; /* تم تكبيره قليلاً */
+            font-size: 17px;
             position: relative;
         }
 
@@ -52,7 +64,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: var(--gradient-main);
+            background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%); /* ألوان دافئة ومضيئة */
             z-index: -1;
             overflow: hidden;
             filter: brightness(1.2) saturate(1.2);
@@ -72,14 +84,14 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle at center, var(--bg-glow-start) 0%, transparent 50%);
-            opacity: 0.4; /* توهج أقوى */
+            background: radial-gradient(circle at center, rgba(255, 215, 0, 0.9) 0%, transparent 50%); /* توهج أصفر ذهبي */
+            opacity: 0.4;
             animation: backgroundGlow 15s ease-in-out infinite alternate;
             pointer-events: none;
         }
         @keyframes backgroundGlow {
             0% { transform: scale(1); opacity: 0.4; }
-            50% { transform: scale(1.1); opacity: 0.5; } /* توهج أقوى */
+            50% { transform: scale(1.1); opacity: 0.5; }
             100% { transform: scale(1); opacity: 0.4; }
         }
 
@@ -89,15 +101,15 @@
             font-size: 0px;
             opacity: 0;
             pointer-events: none;
-            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8)); /* ظل أقوى */
+            filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.8));
             animation: moveParticle linear infinite;
         }
 
         @keyframes moveParticle {
-            0% { transform: translate(var(--x-start, 0vw), var(--y-start, 0vh)) scale(0.3) rotate(0deg); opacity: 0; } /* حجم أكبر قليلاً */
-            10% { opacity: 0.9; } /* وضوح أعلى */
+            0% { transform: translate(var(--x-start, 0vw), var(--y-start, 0vh)) scale(0.3) rotate(0deg); opacity: 0; }
+            10% { opacity: 0.9; }
             90% { opacity: 0.9; }
-            100% { transform: translate(var(--x-end, 100vw), var(--y-end, 100vh)) scale(1.3) rotate(var(--rotate-end, 360deg)); opacity: 0; } /* حجم أكبر قليلاً */
+            100% { transform: translate(var(--x-end, 100vw), var(--y-end, 100vh)) scale(1.3) rotate(var(--rotate-end, 360deg)); opacity: 0; }
         }
 
 
@@ -108,7 +120,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(to bottom, #FF8C00, #FFA500);
+            background: linear-gradient(to bottom, #FF8C00, #FFA500); /* ألوان intro screen */
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -125,16 +137,16 @@
         }
 
         .intro-logo {
-            width: 160px; /* تم تكبيره قليلاً */
-            height: 160px; /* تم تكبيره قليلاً */
+            width: 160px;
+            height: 160px;
             border-radius: 50%;
             overflow: hidden;
             background-color: var(--luminous-white);
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 30px; /* تم تكبيره قليلاً */
-            box-shadow: 0 0 30px var(--bright-yellow), 0 0 60px var(--vibrant-orange); /* ظلال أقوى */
+            margin-bottom: 30px;
+            box-shadow: 0 0 30px var(--bright-yellow), 0 0 60px var(--vibrant-orange);
             transform: scale(0);
             opacity: 0;
             animation: logoPopIn 1s ease-out forwards;
@@ -164,11 +176,11 @@
 
         .intro-text {
             font-family: 'Tajawal', sans-serif;
-            font-size: 3.2em; /* تم تكبيره قليلاً */
+            font-size: 3.2em;
             color: var(--luminous-white);
-            text-shadow: 0 0 20px var(--bright-yellow), 0 0 40px var(--vibrant-orange); /* ظلال أقوى */
+            text-shadow: 0 0 20px var(--bright-yellow), 0 0 40px var(--vibrant-orange);
             opacity: 0;
-            transform: translateY(50px); /* تم تكبيره قليلاً */
+            transform: translateY(50px);
             animation: textFadeIn 1.5s ease-out forwards;
             animation-delay: 0.8s;
             position: relative;
@@ -182,13 +194,13 @@
         /* مؤشر التحميل (Loading Indicator) */
         .loading-text {
             font-family: 'Cairo', sans-serif;
-            font-size: 1.3em; /* تم تكبيره قليلاً */
+            font-size: 1.3em;
             color: var(--luminous-white);
-            margin-top: 20px; /* تم تكبيره قليلاً */
+            margin-top: 20px;
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 2s;
-            text-shadow: 0 0 10px rgba(0,0,0,0.6); /* ظل أقوى */
+            text-shadow: 0 0 10px rgba(0,0,0,0.6);
         }
 
         @keyframes fadeIn {
@@ -211,14 +223,14 @@
 
         /* شريط التحميل */
         .loading-bar-container {
-            width: 75%; /* تم تكبيره قليلاً */
-            max-width: 400px; /* تم تكبيره قليلاً */
-            height: 10px; /* تم تكبيره قليلاً */
+            width: 75%;
+            max-width: 400px;
+            height: 10px;
             background-color: var(--luminous-white);
-            border-radius: 5px; /* تم تكبيره قليلاً */
-            margin-top: 30px; /* تم تكبيره قليلاً */
+            border-radius: 5px;
+            margin-top: 30px;
             overflow: hidden;
-            box-shadow: inset 0 0 5px rgba(0,0,0,0.3); /* ظل أقوى */
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
             opacity: 0;
             animation: fadeIn 1s ease-out forwards;
             animation-delay: 2.2s;
@@ -227,11 +239,11 @@
         .loading-bar {
             width: 0%;
             height: 100%;
-            background: #FF0000;
+            background: linear-gradient(to right, #FF0000, #FFA500); /* تدرج شريط التحميل */
             border-radius: 5px;
             animation: fillBar 3.5s ease-out forwards;
             animation-delay: 0.5s;
-            box-shadow: 0 0 15px #FF0000; /* ظل أقوى */
+            box-shadow: 0 0 15px #FF0000;
         }
 
         @keyframes fillBar {
@@ -255,22 +267,22 @@
             font-size: 0px;
             opacity: 0;
             animation: burstOut 1.5s ease-out forwards;
-            filter: drop-shadow(0 0 10px var(--luminous-white)); /* ظل أقوى */
+            filter: drop-shadow(0 0 10px var(--luminous-white));
         }
 
         @keyframes burstOut {
             0% { transform: scale(0) translate(0,0); opacity: 0; }
             20% { opacity: 1; }
-            100% { transform: scale(1.8) translate(var(--x-offset), var(--y-offset)); opacity: 0; } /* حجم أكبر قليلاً */
+            100% { transform: scale(1.8) translate(var(--x-offset), var(--y-offset)); opacity: 0; }
         }
 
 
         /* المحتوى الرئيسي بعد التحميل */
         #main-content {
             opacity: 0;
-            transform: translateY(60px); /* تم تكبيره قليلاً */
+            transform: translateY(60px);
             transition: opacity 1.5s ease-out, transform 1.5s ease-out;
-            max-width: 1250px; /* تم تكبيره قليلاً */
+            max-width: 1250px;
             margin: 0 auto;
             position: relative;
             z-index: 10;
@@ -285,38 +297,47 @@
             display: none;
         }
 
-        /* الهيدر الأنيق (ثابت تماماً الآن) */
+        /* الهيدر الجديد مع الفيديو (الآن باستخدام position: sticky) */
         .header {
             text-align: center;
-            padding: 35px 20px; /* تم تكبيره قليلاً */
-            background: rgba(255, 255, 255, 0.95); /* أقل شفافية */
-            border-radius: 0 0 45px 45px; /* تم تكبيره قليلاً */
-            box-shadow: 0 10px 30px var(--shadow-intense); /* ظل أقوى */
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
+            padding-top: 15px;
+            padding-left: 20px;
+            padding-right: 20px;
+            padding-bottom: 0; /* لا يوجد padding-bottom كبير هنا */
+            background: rgba(255, 255, 255, 0.95); /* خلفية احتياطية */
+            border-radius: 0 0 45px 45px;
+            box-shadow: 0 10px 30px var(--header-shadow);
+            
+            /* ***** التغيير هنا: استخدام position: sticky ***** */
+            position: sticky; 
+            top: 0; /* ضروري جداً لـ sticky */
+            
+            width: 100%; /* يجب تحديد العرض لـ sticky */
             z-index: 100;
-            border-bottom: 5px solid var(--vibrant-orange); /* حد أسمك */
-            backdrop-filter: blur(10px); /* تم تكبيره قليلاً */
-            overflow: hidden; /* لإخفاء أي جزء من الفيديو يتجاوز الهيدر */
-            display: flex; /* لتمكين الترتيب بالـ flexbox */
+            border-bottom: 5px solid var(--header-border-bottom);
+            backdrop-filter: blur(5px);
+            display: flex;
             flex-direction: column;
-            justify-content: center;
+            justify-content: flex-start;
             align-items: center;
-            position: relative; /* لتحديد موقع الفيديو داخله */
-            height: 250px; /* **تم تقليل ارتفاع الهيدر لتقليل الفراغ** */
+            height: auto; 
+            overflow: hidden; 
+            position: relative; 
+            
+            /* لتحسين الأداء مع sticky */
+            will-change: transform; 
         }
-
+        
         .header-video {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: cover; /* يضمن تغطية الفيديو للمنطقة بالكامل */
-            z-index: -1; /* يوضع خلف المحتوى */
-            filter: brightness(0.8) grayscale(0.2); /* لجعل الفيديو أقل سطوعًا وأكثر هدوءًا */
+            object-fit: cover; 
+            z-index: -2; 
+            filter: brightness(0.6) saturate(1.5) hue-rotate(25deg); 
+            transition: filter 0.5s ease-in-out;
         }
 
         .video-overlay {
@@ -325,32 +346,33 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.4); /* طبقة شفافة سوداء لتوضيح النص */
-            z-index: 0; /* فوق الفيديو مباشرة */
+            background: var(--header-bg-overlay); 
+            z-index: -1; 
         }
 
         .header-content {
-            position: relative; /* لضمان بقاء المحتوى فوق الفيديو والطبقة الشفافة */
+            position: relative; 
             z-index: 1;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            width: 100%;
+            padding-bottom: 10px; 
         }
 
         .header-logo-circle {
-            width: 120px; /* حجم اللوجو الدائري */
-            height: 120px;
+            width: 100px;
+            height: 100px;
             border-radius: 50%;
             overflow: hidden;
             background-color: var(--luminous-white);
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 15px; /* مسافة تحت اللوجو */
-            box-shadow: 0 0 20px var(--bright-yellow), 0 0 40px var(--vibrant-orange); /* ظل قوي */
-            border: 4px solid var(--vibrant-orange); /* حد حول اللوجو */
+            margin-bottom: 10px;
+            box-shadow: 0 0 20px var(--bright-yellow), 0 0 40px var(--vibrant-orange);
+            border: 4px solid var(--vibrant-orange);
         }
 
         .header-logo-circle img {
@@ -359,138 +381,137 @@
             object-fit: cover;
         }
 
-
         .main-title {
             font-family: 'Tajawal', sans-serif;
-            font-size: 3.8em; /* تم تكبيره قليلاً */
+            font-size: 2.8em;
             margin-bottom: 0;
-            color: var(--luminous-white); /* لون أبيض ليتناسب مع خلفية الفيديو الداكنة */
-            text-shadow: 0 0 12px var(--bright-yellow), 0 0 25px var(--vibrant-orange), 0 0 40px rgba(0,0,0,0.8); /* ظلال أقوى وداكنة */
-            animation: titlePulse 2s infinite alternate;
+            color: var(--luminous-white); 
+            text-shadow: 0 0 10px rgba(0,0,0,0.8), 0 0 20px var(--bright-yellow); 
+            animation: titlePulse 2s infinite alternate; 
         }
 
         @keyframes titlePulse {
-            from { transform: scale(1); text-shadow: 0 0 12px var(--bright-yellow), 0 0 25px var(--vibrant-orange), 0 0 40px rgba(0,0,0,0.8); }
-            to { transform: scale(1.03); text-shadow: 0 0 18px var(--bright-yellow), 0 0 30px var(--vibrant-orange), 0 0 50px rgba(0,0,0,0.8); } /* ظلال أقوى */
+            from { transform: scale(1); text-shadow: 0 0 10px rgba(0,0,0,0.8), 0 0 20px var(--bright-yellow); }
+            to { transform: scale(1.03); text-shadow: 0 0 15px rgba(0,0,0,1), 0 0 30px var(--vibrant-orange); } 
         }
 
         .main-title .highlight {
-            color: var(--text-dark); /* لون داكن للنص المميز ليتناسب مع الخلفية الفاتحة */
-            background: var(--luminous-white); /* خلفية بيضاء */
-            padding: 5px 18px; /* تم تكبيره قليلاً */
-            border-radius: 18px; /* تم تكبيره قليلاً */
-            box-shadow: 0 0 18px var(--bright-yellow); /* ظل أقوى */
+            color: var(--text-dark); 
+            background: var(--luminous-white); 
+            padding: 5px 18px;
+            border-radius: 18px;
+            box-shadow: 0 0 18px var(--bright-yellow);
             display: inline-block;
             transform: rotate(-2deg);
         }
 
+        /* حاوية أزرار التنقل (التبويبات) */
+        .nav-tabs {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            padding: 10px 0;
+            background: var(--tab-bg); 
+            border-top: 1px solid rgba(0,0,0,0.1); 
+            border-radius: 0 0 40px 40px; 
+            box-shadow: inset 0 5px 10px rgba(0,0,0,0.1); 
+        }
+
+        .nav-tab-button {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 10px 20px;
+            margin: 0 8px;
+            font-family: 'Cairo', sans-serif;
+            font-size: 1.1em;
+            color: var(--tab-text);
+            font-weight: 700;
+            border-radius: 25px;
+            transition: all 0.3s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-tab-button:hover {
+            color: var(--vibrant-orange);
+            transform: translateY(-2px);
+        }
+
+        .nav-tab-button.active {
+            background: var(--tab-active-bg);
+            color: var(--tab-active-text);
+            box-shadow: var(--tab-active-shadow);
+            transform: translateY(-3px);
+        }
+
+        .nav-tab-button.active .tab-icon {
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+        }
+
+        .tab-icon {
+            font-size: 1.3em;
+            color: inherit; 
+            transition: transform 0.3s ease;
+        }
+
+        /* ***** هذا الـ spacer لم يعد ضرورياً مع position: sticky ***** */
+        /* يمكن إبقاؤه لكن يجب إخفاؤه */
+        #header-spacer {
+            display: none !important; 
+            height: 0 !important;
+        }
 
         /* حاوية المنيو */
         .menu-container {
-            padding-bottom: 50px; /* تم تكبيره قليلاً */
+            padding-bottom: 50px;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             margin: 0 auto;
-            max-width: 1250px; /* نفس عرض main-content المكبر قليلاً */
-            /* padding-top: 260px; **تمت إزالة هذه القيمة ليتحكم بها JavaScript** */
+            max-width: 1250px;
+            /* لا حاجة لـ padding-top هنا بعد الآن إذا كان الهيدر sticky */
         }
 
-        /* --- تصميم الأكورديون العصري والشهي --- */
-        .accordion-wrapper {
+        /* محتوى الأقسام (الآن كل قسم له div خاص به) */
+        .menu-section {
+            display: none; 
             width: 95%;
-            max-width: 950px; /* تم تكبيره قليلاً */
-            margin-top: 40px; /* تم تكبيره قليلاً (هذه المسافة ستضاف فوق الـ padding-top الذي يحدده JS) */
-            border-radius: 25px; /* تم تكبيره قليلاً */
-            background: var(--card-bg-light);
-            box-shadow: 0 15px 35px var(--shadow-intense); /* ظل أقوى */
+            max-width: 950px;
+            margin-top: 40px; /* هذا المارجن سيتحكم بالفراغ تحت الهيدر sticky */
+            border-radius: 25px;
+            background: var(--category-section-bg); 
+            box-shadow: 0 15px 35px var(--shadow-intense);
             overflow: hidden;
-            border: 3px solid var(--bright-yellow); /* حد أسمك */
-        }
-
-        .accordion-item {
-            margin-bottom: 12px; /* تم تكبيره قليلاً */
-            border-radius: 18px; /* تم تكبيره قليلاً */
-            overflow: hidden;
-            box-shadow: 0 8px 20px var(--shadow-soft); /* ظل أقوى */
-            transition: all 0.3s ease-out;
-            position: relative;
-        }
-        .accordion-item:last-child {
-             margin-bottom: 0;
-        }
-
-        .accordion-item.active {
-            box-shadow: 0 12px 30px var(--shadow-intense), 0 0 25px var(--vibrant-orange); /* ظلال أقوى */
-            border-color: var(--vibrant-orange);
-        }
-
-        .accordion-header {
-            width: 100%;
-            background: var(--gradient-main);
-            color: var(--luminous-white);
-            padding: 20px 25px; /* تم تكبيره قليلاً */
-            font-size: 1.6em; /* تم تكبيره قليلاً */
-            font-weight: 700;
-            border: none;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: all 0.3s ease-out;
-            text-shadow: 0 0 10px rgba(0,0,0,0.5); /* ظل أقوى */
-            border-bottom: 2px solid rgba(255, 255, 255, 0.4); /* حد أسمك */
+            border: 3px solid var(--bright-yellow);
+            padding: 35px; 
+            animation: fadeInContent 0.5s ease-out forwards;
         }
         
-        .accordion-header:hover {
-            background: var(--gradient-reverse);
-            transform: translateY(-3px); /* حركة أقوى */
-            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.6); /* ظل أقوى */
+        .menu-section.active {
+            display: block; 
         }
 
-        .accordion-header .icon {
-            font-size: 1.2em; /* تم تكبيره قليلاً */
-            margin-left: 12px; /* تم تكبيره قليلاً */
-            color: var(--text-dark);
-            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.9)); /* ظل أقوى */
-            transition: all 0.3s ease;
+        @keyframes fadeInContent {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .accordion-header .arrow-icon {
-            font-size: 1.3em; /* تم تكبيره قليلاً */
-            transition: transform 0.3s ease;
-            color: var(--luminous-white);
-        }
-
-        .accordion-item.active .accordion-header .arrow-icon {
-            transform: rotate(180deg);
-        }
-
-        .accordion-content {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.35s ease-out, padding 0.35s ease-out; /* مدة أطول قليلاً لانتقال أكثر سلاسة */
-            padding: 0 25px; /* تم تكبيره قليلاً */
-            background: var(--card-bg-light);
-            color: var(--text-dark);
-        }
-
-        .accordion-item.active .accordion-content {
-            max-height: 1800px; /* قيمة أكبر لضمان استيعاب المحتوى */
-            padding: 25px; /* تم تكبيره قليلاً */
-        }
-
-        /* عنوان القسم داخل الأكورديون */
+        /* عنوان القسم */
         .section-title {
             font-family: 'Tajawal', sans-serif;
-            font-size: 2.2em; /* تم تكبيره قليلاً */
+            font-size: 2.2em;
             color: var(--deep-orange);
             text-align: center;
-            margin-bottom: 35px; /* تم تكبيره قليلاً */
-            text-shadow: 0 0 10px var(--bright-yellow); /* ظل أقوى */
+            margin-bottom: 35px;
+            text-shadow: 0 0 10px var(--bright-yellow);
             position: relative;
-            padding-bottom: 18px; /* تم تكبيره قليلاً */
-            border-bottom: 2px dashed rgba(255, 87, 34, 0.5); /* حد أسمك */
+            padding-bottom: 18px;
+            border-bottom: 2px dashed rgba(255, 87, 34, 0.5);
         }
 
         .section-title::after {
@@ -499,95 +520,95 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 70px; /* تم تكبيره قليلاً */
-            height: 4px; /* تم تكبيره قليلاً */
+            width: 70px;
+            height: 4px;
             background: var(--gradient-main);
-            border-radius: 4px; /* تم تكبيره قليلاً */
-            box-shadow: 0 0 10px var(--bright-yellow); /* ظل أقوى */
+            border-radius: 4px;
+            box-shadow: 0 0 10px var(--bright-yellow);
         }
 
         /* شبكة المنتجات */
         .products-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* تم تكبير minmax قليلاً */
-            gap: 35px; /* تم تكبيره قليلاً */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 35px;
             justify-content: center;
         }
 
         .product-card {
             background: var(--luminous-white);
-            border-radius: 20px; /* تم تكبيره قليلاً */
+            border-radius: 20px;
             overflow: hidden;
             text-align: center;
-            padding: 25px; /* تم تكبيره قليلاً */
-            box-shadow: 0 12px 30px var(--shadow-soft); /* ظل أقوى */
-            border: 2px solid var(--bright-yellow); /* حد أسمك */
+            padding: 25px;
+            box-shadow: 0 12px 30px var(--shadow-soft);
+            border: 2px solid var(--bright-yellow);
             transition: transform 0.3s ease-out, box-shadow 0.3s ease, border-color 0.3s ease;
             position: relative;
             z-index: 1;
         }
 
         .product-card:hover {
-            transform: translateY(-10px) scale(1.03); /* حركة أكبر */
-            box-shadow: 0 18px 40px var(--shadow-intense), 0 0 30px var(--vibrant-orange); /* ظلال أقوى */
+            transform: translateY(-10px) scale(1.03);
+            box-shadow: 0 18px 40px var(--shadow-intense), 0 0 30px var(--vibrant-orange);
             border-color: var(--vibrant-orange);
         }
 
         .product-card img {
             width: 100%;
-            height: 180px; /* تم تكبيره قليلاً */
+            height: 180px;
             object-fit: cover;
-            border-radius: 18px; /* تم تكبيره قليلاً */
-            margin-bottom: 18px; /* تم تكبيره قليلاً */
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4); /* ظل أقوى */
-            border: 4px solid var(--bright-yellow); /* حد أسمك */
+            border-radius: 18px;
+            margin-bottom: 18px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+            border: 4px solid var(--bright-yellow);
             transition: transform 0.3s ease, border-color 0.3s ease;
         }
 
         .product-card:hover img {
-            transform: scale(1.02); /* حركة أكبر */
+            transform: scale(1.02);
             border-color: var(--vibrant-orange);
         }
 
         .product-card h3 {
             font-family: 'Tajawal', sans-serif;
-            font-size: 1.8em; /* تم تكبيره قليلاً */
+            font-size: 1.8em;
             color: var(--deep-orange);
-            margin-bottom: 10px; /* تم تكبيره قليلاً */
-            text-shadow: 0 0 8px rgba(0,0,0,0.3); /* ظل أقوى */
+            margin-bottom: 10px;
+            text-shadow: 0 0 8px rgba(0,0,0,0.3);
         }
 
         .product-card .new-tag {
             background: var(--vibrant-orange);
             color: var(--luminous-white);
-            font-size: 0.8em; /* تم تكبيره قليلاً */
-            padding: 4px 8px; /* تم تكبيره قليلاً */
-            border-radius: 6px; /* تم تكبيره قليلاً */
+            font-size: 0.8em;
+            padding: 4px 8px;
+            border-radius: 6px;
             vertical-align: super;
-            margin-right: 6px; /* تم تكبيره قليلاً */
-            box-shadow: 0 0 10px var(--vibrant-orange); /* ظل أقوى */
+            margin-right: 6px;
+            box-shadow: 0 0 10px var(--vibrant-orange);
             animation: newTagBounce 1s infinite alternate;
         }
 
         @keyframes newTagBounce {
             0% { transform: translateY(0); }
-            100% { transform: translateY(-3px); } /* حركة أكبر */
+            100% { transform: translateY(-3px); }
         }
 
         .product-card p {
-            font-size: 1em; /* تم تكبيره قليلاً */
+            font-size: 1em;
             color: var(--text-dark);
-            margin-bottom: 15px; /* تم تكبيره قليلاً */
+            margin-bottom: 15px;
         }
 
         .product-card .price {
             font-family: 'Cairo', sans-serif;
-            font-size: 2em; /* تم تكبيره قليلاً */
+            font-size: 2em;
             font-weight: 900;
             color: var(--vibrant-orange);
             display: block;
-            margin-bottom: 25px; /* تم تكبيره قليلاً */
-            text-shadow: 0 0 10px var(--bright-yellow); /* ظل أقوى */
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px var(--bright-yellow);
         }
 
         .order-button {
@@ -596,16 +617,16 @@
             justify-content: center;
             background: var(--gradient-main);
             color: var(--luminous-white);
-            padding: 14px 30px; /* تم تكبيره قليلاً */
-            border-radius: 35px; /* تم تكبيره قليلاً */
+            padding: 14px 30px;
+            border-radius: 35px;
             font-weight: bold;
-            font-size: 1.1em; /* تم تكبيره قليلاً */
-            box-shadow: 0 8px 20px var(--shadow-intense); /* ظل أقوى */
+            font-size: 1.1em;
+            box-shadow: 0 8px 20px var(--shadow-intense);
             transition: all 0.3s ease-out;
             border: none;
             cursor: pointer;
             text-transform: uppercase;
-            letter-spacing: 0.8px; /* تباعد أحرف أكبر قليلاً */
+            letter-spacing: 0.8px;
             position: relative;
             overflow: hidden;
         }
@@ -617,7 +638,7 @@
             left: -100%;
             width: 40%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.5); /* توهج أقوى */
+            background: rgba(255, 255, 255, 0.5);
             transition: left 0.3s ease-out;
             transform: skewX(-20deg);
         }
@@ -627,204 +648,214 @@
         }
 
         .order-button i {
-            margin-right: 10px; /* تم تكبيره قليلاً */
+            margin-right: 10px;
             transition: transform 0.3s ease;
         }
 
         .order-button:hover {
             background: var(--gradient-reverse);
-            transform: translateY(-4px); /* حركة أكبر */
-            box-shadow: 0 12px 25px var(--shadow-intense), 0 0 18px var(--bright-yellow); /* ظلال أقوى */
+            transform: translateY(-4px);
+            box-shadow: 0 12px 25px var(--shadow-intense), 0 0 18px var(--bright-yellow);
         }
 
         .order-button:hover i {
-            transform: translateX(5px); /* حركة أكبر */
+            transform: translateX(5px);
         }
         
         /* --- حقوق الطبع والنشر (مع زر الانستجرام داخلها) --- */
         .footer {
             text-align: center;
             padding: 25px;
-            background: var(--deep-orange); /* لون أعمق للخلفية */
+            background: var(--deep-orange);
             color: var(--text-light);
             font-size: 0.95em;
-            margin-top: 50px; /* مسافة من المحتوى الذي يسبقه */
-            box-shadow: 0 -5px 15px rgba(0,0,0,0.3); /* ظل علوي */
-            display: flex; /* لترتيب المحتوى داخله */
-            flex-direction: column; /* ليكون الزر والنص فوق بعضهما */
-            align-items: center; /* توسيط أفقي */
-            gap: 15px; /* مسافة بين العناصر */
+            margin-top: 50px;
+            box-shadow: 0 -5px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            border-top: 3px solid var(--bright-yellow);
         }
 
         .footer .instagram-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            width: 60px; /* حجم ثابت صغير للزر */
-            height: 60px; /* حجم ثابت صغير للزر */
-            border-radius: 50%; /* لجعل الزر دائري */
-            background: var(--vibrant-orange); /* خلفية برتقالية */
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--vibrant-orange);
             color: var(--luminous-white);
-            font-size: 2.2em; /* حجم كبير للأيقونة */
+            font-size: 1.8em;
             text-decoration: none;
-            box-shadow: 0 0 15px var(--bright-yellow), 0 0 30px var(--vibrant-orange); /* توهج برتقالي/أصفر */
+            box-shadow: 0 0 10px var(--bright-yellow), 0 0 20px var(--vibrant-orange);
             transition: all 0.3s ease-in-out;
-            border: 3px solid var(--luminous-white); /* حد أبيض لبروز أكبر */
+            border: 2px solid var(--luminous-white);
         }
 
         .footer .instagram-button:hover {
-            transform: scale(1.1); /* تكبير عند التحويم */
-            box-shadow: 0 0 25px var(--bright-yellow), 0 0 50px var(--vibrant-orange); /* توهج أقوى */
+            transform: scale(1.1);
+            box-shadow: 0 0 15px var(--bright-yellow), 0 0 30px var(--vibrant-orange);
         }
 
-        /* إخفاء النص داخل الزر (تمت إزالته من HTML أيضاً) */
-        .footer .instagram-button span {
-            display: none; 
-        }
 
         /* --- التجاوبية الاحترافية (Responsive Design) --- */
         /* تصميم موجه للهواتف أولاً (Mobile-First) */
 
         body {
-            font-size: 15px; /* حجم خط أساسي أكبر قليلاً للهواتف */
+            font-size: 15px;
         }
 
         .header {
-            padding: 25px 10px; /* تم تكبيره قليلاً */
-            border-radius: 0 0 25px 25px; /* تم تكبيره قليلاً */
-            height: 180px; /* **ارتفاع الهيدر على الموبايل** */
+            padding-top: 10px;
+            padding-left: 10px;
+            padding-right: 10px;
+            border-radius: 0 0 25px 25px;
+            height: auto;
         }
 
         .header-logo-circle {
-            width: 90px; /* حجم اللوجو الدائري على الموبايل */
-            height: 90px;
-            margin-bottom: 10px;
+            width: 80px;
+            height: 80px;
+            margin-bottom: 8px;
         }
 
         .main-title {
-            font-size: 2em; /* تم تكبيره قليلاً */
+            font-size: 1.8em;
+        }
+
+        .nav-tabs {
+            padding: 8px 0;
+            border-radius: 0 0 25px 25px;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .nav-tab-button {
+            padding: 8px 15px;
+            margin: 0 3px;
+            font-size: 0.9em;
+            gap: 5px;
+        }
+
+        .tab-icon {
+                font-size: 1em;
         }
 
         .intro-logo {
-            width: 130px; /* حجم أكبر قليلاً للوجو على الهواتف */
+            width: 130px;
             height: 130px;
-            margin-bottom: 20px; /* تم تكبيره قليلاً */
+            margin-bottom: 20px;
         }
 
         .intro-text {
-            font-size: 2em; /* حجم نص Intro أكبر قليلاً على الهواتف */
+            font-size: 2em;
         }
         .loading-text {
-            font-size: 1.1em; /* حجم نص التحميل على الموبايل */
-            margin-top: 15px; /* تم تكبيره قليلاً */
+            font-size: 1.1em;
+            margin-top: 15px;
         }
         .loading-bar-container {
-            width: 85%; /* عرض أكبر قليلاً على الموبايل */
-            margin-top: 20px; /* تم تكبيره قليلاً */
-            height: 7px; /* تم تكبيره قليلاً */
+            width: 85%;
+            margin-top: 20px;
+            height: 7px;
         }
-
 
         .menu-container {
-            /* padding-top: 190px; **تمت إزالة هذه القيمة ليتحكم بها JavaScript** */
-            padding-bottom: 35px; /* تم تكبيره قليلاً */
+            padding-bottom: 35px;
         }
 
-        .accordion-wrapper {
-            margin-top: 20px; /* تم تكبيره قليلاً */
-            border-radius: 18px; /* تم تكبيره قليلاً */
-            width: 98%; /* عرض أكبر على الهواتف */
-        }
-
-        .accordion-header {
-            font-size: 1.2em; /* تم تكبيره قليلاً */
-            padding: 12px 15px; /* تم تكبيره قليلاً */
-        }
-
-        .accordion-header .icon {
-            margin-left: 10px; /* تم تكبيره قليلاً */
-            font-size: 1em; /* تم تكبيره قليلاً */
-        }
-
-        .accordion-header .arrow-icon {
-            font-size: 1.1em; /* تم تكبيره قليلاً */
-        }
-
-        .accordion-content {
-            padding: 0 12px; /* تم تكبيره قليلاً */
-        }
-
-        .accordion-item.active .accordion-content {
-            padding: 12px; /* تم تكبيره قليلاً */
+        .menu-section {
+            margin-top: 20px; /* ضبط المارجن مع sticky */
+            border-radius: 18px;
+            width: 98%;
+            padding: 18px;
         }
 
         .section-title {
-            font-size: 1.6em; /* تم تكبيره قليلاً */
-            margin-bottom: 25px; /* تم تكبيره قليلاً */
+            font-size: 1.6em;
+            margin-bottom: 25px;
         }
 
         .products-grid {
-            grid-template-columns: 1fr; /* عمود واحد دائمًا على الجوال */
-            gap: 20px; /* تم تكبيره قليلاً */
+            grid-template-columns: 1fr;
+            gap: 20px;
         }
 
         .product-card {
-            padding: 18px; /* تم تكبيره قليلاً */
-            border-radius: 15px; /* تم تكبيره قليلاً */
+            padding: 18px;
+            border-radius: 15px;
         }
 
         .product-card img {
-            height: 110px; /* تم تكبيره قليلاً */
-            margin-bottom: 12px; /* تم تكبيره قليلاً */
-            border-radius: 12px; /* تم تكبيره قليلاً */
+            height: 110px;
+            margin-bottom: 12px;
+            border-radius: 12px;
         }
 
         .product-card h3 {
-            font-size: 1.3em; /* تم تكبيره قليلاً */
+            font-size: 1.3em;
         }
 
         .product-card p {
-            font-size: 0.9em; /* تم تكبيره قليلاً */
+            font-size: 0.9em;
             margin-bottom: 10px;
         }
 
         .product-card .price {
-            font-size: 1.4em; /* تم تكبيره قليلاً */
+            font-size: 1.4em;
             margin-bottom: 18px;
         }
 
         .order-button {
-            padding: 8px 18px; /* تم تكبيره قليلاً */
-            font-size: 0.8em; /* تم تكبيره قليلاً */
+            padding: 8px 18px;
+            font-size: 0.8em;
         }
 
         .footer {
             margin-top: 30px;
             padding: 20px;
             font-size: 0.85em;
-            gap: 10px; /* مسافة أصغر للهواتف */
+            gap: 10px;
         }
         .footer .instagram-button {
-            width: 50px;
-            height: 50px;
-            font-size: 1.8em;
+            width: 45px;
+            height: 45px;
+            font-size: 1.6em;
         }
 
 
         /* تعديلات للأجهزة اللوحية وما فوق (Tablet and larger) */
         @media (min-width: 768px) {
-            body { font-size: 17px; } /* حجم خط أكبر للأجهزة اللوحية */
+            body { font-size: 17px; }
             .header { 
-                padding: 30px 15px; 
+                padding-top: 15px;
+                padding-left: 15px;
+                padding-right: 15px;
                 border-radius: 0 0 35px 35px; 
-                height: 200px; /* **ارتفاع الهيدر على التابلت** */
             }
             .header-logo-circle {
-                width: 100px;
-                height: 100px;
-                margin-bottom: 12px;
+                width: 90px;
+                height: 90px;
+                margin-bottom: 10px;
             }
-            .main-title { font-size: 3em; }
+            .main-title { font-size: 2.5em; }
+            .nav-tabs {
+                padding: 10px 0;
+                border-radius: 0 0 35px 35px;
+                flex-wrap: nowrap;
+            }
+            .nav-tab-button {
+                padding: 10px 18px;
+                margin: 0 5px;
+                font-size: 1em;
+                gap: 6px;
+            }
+            .tab-icon {
+                font-size: 1.2em;
+            }
+
             .intro-logo { width: 160px; height: 160px; }
             .intro-text { font-size: 3em; }
             .loading-text {
@@ -837,17 +868,16 @@
                 height: 10px;
             }
             .menu-container { 
-                /* padding-top: 210px; **تمت إزالة هذه القيمة ليتحكم بها JavaScript** */
                 padding-bottom: 45px; 
             }
-            .accordion-wrapper { max-width: 850px; margin-top: 30px; border-radius: 22px; }
-            .accordion-header { padding: 18px 22px; font-size: 1.4em; }
-            .accordion-header .icon { margin-left: 12px; font-size: 1.1em; }
-            .accordion-header .arrow-icon { font-size: 1.2em; }
-            .accordion-content { padding: 0 18px; }
-            .accordion-item.active .accordion-content { padding: 18px; }
+            .menu-section { 
+                max-width: 850px; 
+                margin-top: 30px; /* ضبط المارجن مع sticky */
+                border-radius: 22px; 
+                padding: 25px; 
+            }
             .section-title { font-size: 1.8em; margin-bottom: 30px; }
-            .products-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; } /* عمودين أو أكثر */
+            .products-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 25px; }
             .product-card { padding: 20px; border-radius: 18px; }
             .product-card img { height: 140px; margin-bottom: 15px; border-radius: 15px; }
             .product-card h3 { font-size: 1.5em; }
@@ -861,32 +891,46 @@
                 gap: 15px;
             }
             .footer .instagram-button {
-                width: 60px;
-                height: 60px;
-                font-size: 2.2em;
+                width: 50px;
+                height: 50px;
+                font-size: 1.8em;
             }
         }
 
         /* تعديلات للشاشات الكبيرة (Desktop) */
         @media (min-width: 992px) {
             .header { 
-                padding: 35px 20px; 
+                padding-top: 20px;
+                padding-left: 20px;
+                padding-right: 20px;
                 border-radius: 0 0 45px 45px; 
-                height: 250px; /* **ارتفاع الهيدر على الديسكتوب** */
             }
             .header-logo-circle {
-                width: 120px;
-                height: 120px;
-                margin-bottom: 15px;
+                width: 100px;
+                height: 100px;
+                margin-bottom: 12px;
             }
-            .main-title { font-size: 3.8em; }
+            .main-title { font-size: 3.2em; }
+            .nav-tabs {
+                padding: 12px 0;
+                border-radius: 0 0 45px 45px;
+            }
+            .nav-tab-button {
+                padding: 12px 22px;
+                margin: 0 8px;
+                font-size: 1.1em;
+                gap: 8px;
+            }
+            .tab-icon {
+                font-size: 1.3em;
+            }
+
             .intro-text { font-size: 3.2em; }
-            .accordion-wrapper { max-width: 950px; margin-top: 40px; }
-            .accordion-header { padding: 20px 25px; font-size: 1.6em; }
-            .accordion-header .icon { margin-left: 15px; font-size: 1.2em; }
-            .accordion-header .arrow-icon { font-size: 1.3em; }
-            .accordion-content { padding: 0 25px; }
-            .accordion-item.active .accordion-content { padding: 25px; }
+            .menu-section { 
+                max-width: 950px; 
+                margin-top: 40px; /* ضبط المارجن مع sticky */
+                padding: 35px; 
+            }
             .section-title { font-size: 2.2em; margin-bottom: 35px; }
             .products-grid { gap: 30px; }
             .product-card { padding: 25px; }
@@ -900,28 +944,40 @@
                 font-size: 0.95em;
             }
             .footer .instagram-button {
-                width: 70px;
-                height: 70px;
-                font-size: 2.5em;
+                width: 60px;
+                height: 60px;
+                font-size: 2.2em;
             }
         }
 
         @media (min-width: 1200px) {
             .header {
-                height: 300px; /* **ارتفاع الهيدر على الشاشات الكبيرة جداً** */
+                padding-top: 25px;
+                padding-left: 20px;
+                padding-right: 20px;
             }
             .header-logo-circle {
-                width: 140px;
-                height: 140px;
-                margin-bottom: 20px;
+                width: 120px;
+                height: 120px;
+                margin-bottom: 15px;
             }
-            .main-title { font-size: 4em; }
+            .main-title { font-size: 3.5em; }
+            .nav-tabs {
+                padding: 15px 0;
+            }
+            .nav-tab-button {
+                padding: 14px 25px;
+                font-size: 1.2em;
+            }
+            .tab-icon {
+                font-size: 1.4em;
+            }
+
             .intro-text { font-size: 3.5em; }
             .loading-text {
                 font-size: 1.4em;
             }
-            .accordion-wrapper { max-width: 1050px; }
-            .accordion-header { font-size: 1.7em; padding: 22px 28px; }
+            .menu-section { max-width: 1050px; }
             .section-title { font-size: 2.4em; }
             .products-grid { gap: 35px; }
             .product-card { padding: 30px; }
@@ -930,9 +986,9 @@
             .product-card .price { font-size: 2.2em; }
             .order-button { padding: 16px 35px; font-size: 1.2em; }
             .footer .instagram-button {
-                width: 80px;
-                height: 80px;
-                font-size: 2.8em;
+                width: 70px;
+                height: 70px;
+                font-size: 2.5em;
             }
         }
     </style>
@@ -956,7 +1012,7 @@
     <div id="main-content" class="hidden">
         <header class="header" id="main-header">
             <video autoplay loop muted playsinline class="header-video" poster="https://via.placeholder.com/1920x1080/FF5722/FFFFFF?text=Video+Loading">
-                <source src="https://cdn.pixabay.com/video/2021/04/14/71119-537976857_large.mp4">
+                <source src="https://cdn.pixabay.com/video/2021/04/14/71119-537976857_large.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="video-overlay"></div>
@@ -966,143 +1022,133 @@
                 </div>
                 <h1 class="main-title"><span class="highlight">بطاطا المدينة</span></h1>
             </div>
+            <div class="nav-tabs" id="navTabs">
+                <button class="nav-tab-button active" data-target="fries-section">
+                    <span class="tab-icon">🍟</span>
+                    <span>البطاطا</span>
+                </button>
+                <button class="nav-tab-button" data-target="burgers-section">
+                    <span class="tab-icon">🍔</span>
+                    <span>البرجر</span>
+                </button>
+                <button class="nav-tab-button" data-target="drinks-section">
+                    <span class="tab-icon">🥤</span>
+                    <span>المشروبات</span>
+                </button>
+                <button class="nav-tab-button" data-target="sauces-section">
+                    <span class="tab-icon">🌶️</span>
+                    <span>الصوصات</span>
+                </button>
+            </div>
         </header>
 
+        <div id="header-spacer"></div> 
+
         <main class="menu-container">
-            <div class="accordion-wrapper">
-                <div class="accordion-item">
-                    <button class="accordion-header" data-target="fries-content">
-                        <span class="icon">🍟</span>
-                        <span class="title">البطاطا المذهلة</span>
-                        <i class="fas fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="accordion-content" id="fries-content">
-                        <h2 class="section-title">قسم البطاطا</h2>
-                        <div class="products-grid">
-                            <div class="product-card">
-                                <img src="images/product1.jpg" alt="بطاطا مقلية كلاسيك">
-                                <div class="card-content">
-                                    <h3>بطاطا مقلية كلاسيك <span class="new-tag">جديد!</span></h3>
-                                    <p>بطاطا ذهبية ومقرمشة، محضرة بعناية لترضي ذوقك الرفيع وتثير شهيتك.</p>
-                                    <span class="price">5.00 د.أ</span>
-                                    <button class="order-button" data-product="بطاطا مقلية كلاسيك">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="images/product2.jpg" alt="بطاطا بالجبنة السائحة">
-                                <div class="card-content">
-                                    <h3>بطاطا بالجبنة السائحة</h3>
-                                    <p>غنية بجبنة الشيدر الذائبة وصلصة خاصة، لمذاق لا يُقاوم يجعلك تطلب المزيد.</p>
-                                    <span class="price">7.50 د.أ</span>
-                                    <button class="order-button" data-product="بطاطا بالجبنة السائحة">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="images/product6.jpg" alt="بطاطا بالبهارات الحارة">
-                                <div class="card-content">
-                                    <h3>بطاطا بالبهارات الحارة</h3>
-                                    <p>لعشاق النكهات القوية، بطاطا بخلطة بهاراتنا السرية الحارّة والمشبعة.</p>
-                                    <span class="price">6.00 د.أ</span>
-                                    <button class="order-button" data-product="بطاطا بالبهارات الحارة">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
+            <div class="menu-section active" id="fries-section">
+                <h2 class="section-title">قسم البطاطا</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="https://cdn.pixabay.com/photo/2017/03/23/04/04/macro-2167281_1280.jpg" alt="بطاطا مقلية كلاسيك">
+                        <div class="card-content">
+                            <h3>بطاطا مقلية كلاسيك <span class="new-tag">جديد!</span></h3>
+                            <p>بطاطا ذهبية ومقرمشة، محضرة بعناية لترضي ذوقك الرفيع وتثير شهيتك.</p>
+                            <span class="price">5.00 د.أ</span>
+                            <button class="order-button" data-product="بطاطا مقلية كلاسيك">اطلب الآن <i class="fas fa-phone-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product2.jpg" alt="بطاطا بالجبنة السائحة">
+                        <div class="card-content">
+                            <h3>بطاطا بالجبنة السائحة</h3>
+                            <p>غنية بجبنة الشيدر الذائبة وصلصة خاصة، لمذاق لا يُقاوم يجعلك تطلب المزيد.</p>
+                            <span class="price">7.50 د.أ</span>
+                            <button class="order-button" data-product="بطاطا بالجبنة السائحة">اطلب الآن <i class="fas fa-phone-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product6.jpg" alt="بطاطا بالبهارات الحارة">
+                        <div class="card-content">
+                            <h3>بطاطا بالبهارات الحارة</h3>
+                            <p>لعشاق النكهات القوية، بطاطا بخلطة بهاراتنا السرية الحارّة والمشبعة.</p>
+                            <span class="price">6.00 د.أ</span>
+                            <button class="order-button" data-product="بطاطا بالبهارات الحارة">اطلب الآن <i class="fas fa-phone-alt"></i></button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" data-target="burgers-content">
-                        <span class="icon">🍔</span>
-                        <span class="title">البرجر الشهي</span>
-                        <i class="fas fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="accordion-content" id="burgers-content">
-                        <h2 class="section-title">قسم البرجر</h2>
-                        <div class="products-grid">
-                            <div class="product-card">
-                                <img src="images/product3.jpg" alt="برجر لحم كلاسيك">
-                                <div class="card-content">
-                                    <h3>برجر لحم كلاسيك</h3>
-                                    <p>لحم بقري فاخر، خس، طماطم، بصل، وصوص خاص في خبز طازج يذوب في الفم.</p>
-                                    <span class="price">9.00 د.أ</span>
-                                    <button class="order-button" data-product="برجر لحم كلاسيك">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="images/product7.jpg" alt="برجر دجاج مقرمش">
-                                <div class="card-content">
-                                    <h3>برجر دجاج مقرمش</h3>
-                                    <p>دجاج مقرمش ذهبي، مع صوص أيولي خاص ومخلل، تجربة لا تُنسى.</p>
-                                    <span class="price">8.50 د.أ</span>
-                                    <button class="order-button" data-product="برجر دجاج مقرمش">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
+            <div class="menu-section" id="burgers-section">
+                <h2 class="section-title">قسم البرجر</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/product3.jpg" alt="برجر لحم كلاسيك">
+                        <div class="card-content">
+                            <h3>برجر لحم كلاسيك</h3>
+                            <p>لحم بقري فاخر، خس، طماطم، بصل، وصوص خاص في خبز طازج يذوب في الفم.</p>
+                            <span class="price">9.00 د.أ</span>
+                            <button class="order-button" data-product="برجر لحم كلاسيك">اطلب الآن <i class="fas fa-phone-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product7.jpg" alt="برجر دجاج مقرمش">
+                        <div class="card-content">
+                            <h3>برجر دجاج مقرمش</h3>
+                            <p>دجاج مقرمش ذهبي، مع صوص أيولي خاص ومخلل، تجربة لا تُنسى.</p>
+                            <span class="price">8.50 د.أ</span>
+                            <button class="order-button" data-product="برجر دجاج مقرمش">اطلب الآن <i class="fas fa-phone-alt"></i></button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" data-target="drinks-content">
-                        <span class="icon">🥤</span>
-                        <span class="title">المشروبات المنعشة</span>
-                        <i class="fas fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="accordion-content" id="drinks-content">
-                        <h2 class="section-title">قسم المشروبات</h2>
-                        <div class="products-grid">
-                            <div class="product-card">
-                                <img src="images/product4.jpg" alt="كوكاكولا">
-                                <div class="card-content">
-                                    <h3>كوكا كولا</h3>
-                                    <p>مشروب كوكا كولا منعش، يروي عطشك ويكمل وجبتك.</p>
-                                    <span class="price">1.50 د.أ</span>
-                                    <button class="order-button" data-product="كوكا كولا">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="images/product8.jpg" alt="عصير برتقال طبيعي">
-                                <div class="card-content">
-                                    <h3>عصير برتقال طبيعي</h3>
-                                    <p>عصير برتقال طازج 100%، غني بالفيتامينات والنكهة الطبيعية.</p>
-                                    <span class="price">3.00 د.أ</span>
-                                    <button class="order-button" data-product="عصير برتقال طبيعي">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                    </div>
-                            </div>
+            <div class="menu-section" id="drinks-section">
+                <h2 class="section-title">قسم المشروبات</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/product4.jpg" alt="كوكاكولا">
+                        <div class="card-content">
+                            <h3>كوكا كولا</h3>
+                            <p>مشروب كوكا كولا منعش، يروي عطشك ويكمل وجبتك.</p>
+                            <span class="price">1.50 د.أ</span>
+                            <button class="order-button" data-product="كوكا كولا">اطلب الآن <i class="fas fa-phone-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product8.jpg" alt="عصير برتقال طبيعي">
+                        <div class="card-content">
+                            <h3>عصير برتقال طبيعي</h3>
+                            <p>عصير برتقال طازج 100%، غني بالفيتامينات والنكهة الطبيعية.</p>
+                            <span class="price">3.00 د.أ</span>
+                            <button class="order-button" data-product="عصير برتقال طبيعي">اطلب الآن <i class="fas fa-phone-alt"></i></button>
                         </div>
                     </div>
                 </div>
+            </div>
 
-                <div class="accordion-item">
-                    <button class="accordion-header" data-target="sauces-content">
-                        <span class="icon">🌶️</span>
-                        <span class="title">الصوصات المميزة</span>
-                        <i class="fas fa-chevron-down arrow-icon"></i>
-                    </button>
-                    <div class="accordion-content" id="sauces-content">
-                        <h2 class="section-title">قسم الصوصات</h2>
-                        <div class="products-grid">
-                            <div class="product-card">
-                                <img src="images/product5.jpg" alt="صوص الثوم">
-                                <div class="card-content">
-                                    <h3>صوص الثوم المميز</h3>
-                                    <p>صوص الثوم الغني بالطعم، مثالي مع البطاطا والبرجر، يضيف لمسة سحرية.</p>
-                                    <span class="price">1.00 د.أ</span>
-                                    <button class="order-button" data-product="صوص الثوم">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <img src="images/product9.jpg" alt="صوص الباربيكيو المدخن">
-                                <div class="card-content">
-                                    <h3>صوص الباربيكيو المدخن</h3>
-                                    <p>صوص باربيكيو غني بنكهة الدخان، يضيف عمقًا ومذاقًا فريدًا لوجبتك.</p>
-                                    <span class="price">1.25 د.أ</span>
-                                    <button class="order-button" data-product="صوص الباربيكيو المدخن">اطلب الآن <i class="fas fa-phone-alt"></i></button>
-                                </div>
-                            </div>
+            <div class="menu-section" id="sauces-section">
+                <h2 class="section-title">قسم الصوصات</h2>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <img src="images/product5.jpg" alt="صوص الثوم">
+                        <div class="card-content">
+                            <h3>صوص الثوم المميز</h3>
+                            <p>صوص الثوم الغني بالطعم، مثالي مع البطاطا والبرجر، يضيف لمسة سحرية.</p>
+                            <span class="price">1.00 د.أ</span>
+                            <button class="order-button" data-product="صوص الثوم">اطلب الآن <i class="fas fa-phone-alt"></i></button>
+                        </div>
+                    </div>
+                    <div class="product-card">
+                        <img src="images/product9.jpg" alt="صوص الباربيكيو المدخن">
+                        <div class="card-content">
+                            <h3>صوص الباربيكيو المدخن</h3>
+                            <p>صوص باربيكيو غني بنكهة الدخان، يضيف عمقًا ومذاقًا فريدًا لوجبتك.</p>
+                            <span class="price">1.25 د.أ</span>
+                            <button class="order-button" data-product="صوص الباربيكيو المدخن">اطلب الآن <i class="fas fa-phone-alt"></i></button>
                         </div>
                     </div>
                 </div>
-            </div> 
+            </div>
         </main>
 
         <footer class="footer">
@@ -1120,36 +1166,37 @@
             const mainContent = document.getElementById('main-content');
             const mainHeader = document.getElementById('main-header');
             const animatedFullBackground = document.getElementById('animated-full-background');
-            const accordionHeaders = document.querySelectorAll('.accordion-header');
-            const accordionItems = document.querySelectorAll('.accordion-item');
+            const navTabButtons = document.querySelectorAll('.nav-tab-button');
+            const menuSections = document.querySelectorAll('.menu-section');
             const menuContainer = document.querySelector('.menu-container');
+            // const headerSpacer = document.getElementById('header-spacer'); // لم يعد ضرورياً مع sticky
 
             const foodParticlesEmojis = ['🍔', '🍟'];
 
             // --- 1. شاشة المقدمة كشاشة تحميل ---
             const createBurstParticles = () => {
-                const numBurstParticles = 35; // تم تكبيره قليلاً
+                const numBurstParticles = 35;
                 for (let i = 0; i < numBurstParticles; i++) {
                     const particle = document.createElement('span');
                     particle.classList.add('intro-burst-particle');
                     particle.textContent = foodParticlesEmojis[Math.floor(Math.random() * foodParticlesEmojis.length)];
 
-                    const size = Math.random() * 35 + 25; // تم تكبيره قليلاً
+                    const size = Math.random() * 35 + 25;
                     particle.style.fontSize = `${size}px`;
 
                     const angle = Math.random() * 2 * Math.PI;
-                    const radius = Math.random() * 180 + 100; // تم تكبيره قليلاً
+                    const radius = Math.random() * 180 + 100;
 
                     particle.style.setProperty('--x-offset', `${Math.cos(angle) * radius}px`);
                     particle.style.setProperty('--y-offset', `${Math.sin(angle) * radius}px`);
-                    particle.style.animationDelay = `${Math.random() * 0.5}s`; // تم تكبيره قليلاً
+                    particle.style.animationDelay = `${Math.random() * 0.5}s`;
                     introBurstContainer.appendChild(particle);
                 }
             };
 
             setTimeout(() => {
                 createBurstParticles();
-            }, 500); // تم تكبيره قليلاً
+            }, 500);
 
             setTimeout(() => {
                 introScreen.classList.add('hidden');
@@ -1157,23 +1204,25 @@
                 mainContent.classList.add('visible');
                 createBackgroundParticles();
                 
-                // تحديث padding-top للمنيو بعد ظهور الهيدر وتحديد حجمه النهائي
-                adjustMenuPadding(); 
-                // إضافة معالج حدث لتحديث padding عند تغيير حجم الشاشة
-                window.addEventListener('resize', adjustMenuPadding);
+                // *** مع position: sticky، لا نحتاج لتعديل padding عبر JS للـ spacer ***
+                // المارجن العلوي لـ .menu-section سيتحكم بالفراغ
+                // adjustMenuPadding(); // يمكن إزالة هذا الاستدعاء إذا كنت متأكداً من sticky
 
-            }, 4000); // تم تكبير إجمالي مدة شاشة المقدمة قليلاً
+                // كما لا نحتاج لـ MutationObserver و resize event لضبط الـ spacer
+                // لأن sticky يتم التعامل معه بواسطة المتصفح
+
+            }, 4000); // إجمالي مدة شاشة المقدمة
 
 
             // --- 2. جزيئات الخلفية المتحركة (برجر وبطاطا) ---
             function createBackgroundParticles() {
-                const numParticles = 30; // تم تكبيره قليلاً
+                const numParticles = 30;
                 for (let i = 0; i < numParticles; i++) {
                     const particle = document.createElement('span');
                     particle.classList.add('food-particle');
                     particle.textContent = foodParticlesEmojis[Math.floor(Math.random() * foodParticlesEmojis.length)];
 
-                    const size = Math.random() * 20 + 20; // تم تكبيره قليلاً
+                    const size = Math.random() * 20 + 20;
                     particle.style.fontSize = `${size}px`;
 
                     const startX = Math.random() * 100;
@@ -1181,7 +1230,7 @@
                     const endX = Math.random() * 100;
                     const endY = Math.random() * 100;
 
-                    const rotateEnd = Math.random() * 720 + 360; // تم تكبيره قليلاً
+                    const rotateEnd = Math.random() * 720 + 360;
 
                     particle.style.setProperty('--x-start', `${startX}vw`);
                     particle.style.setProperty('--y-start', `${startY}vh`);
@@ -1189,45 +1238,77 @@
                     particle.style.setProperty('--y-end', `${endY}vh`);
                     particle.style.setProperty('--rotate-end', `${rotateEnd}deg`);
 
-                    particle.style.animationDelay = `${Math.random() * 20}s`; // تم تكبيره قليلاً
-                    particle.style.animationDuration = `${Math.random() * 20 + 30}s`; // تم تكبيره قليلاً
+                    particle.style.animationDelay = `${Math.random() * 20}s`;
+                    particle.style.animationDuration = `${Math.random() * 20 + 30}s`;
 
                     animatedFullBackground.appendChild(particle);
                 }
             }
 
-            // --- وظيفة لضبط المسافة تحت الهيدر ---
+            // *** وظيفة adjustMenuPadding() لم تعد تستخدم لـ spacer ***
+            // ولكن قد تكون مفيدة إذا كان هناك عناصر أخرى تعتمد على ارتفاع الهيدر
+            // إذا كنت لا تحتاجها، يمكن حذفها
+            /*
             function adjustMenuPadding() {
                 const headerHeight = mainHeader.offsetHeight;
-                // قم بتقليل القيمة المضافة هنا إلى 0 أو 5 أو 10 حسب الرغبة للحصول على المسافة المطلوبة
-                menuContainer.style.paddingTop = `${headerHeight + 0}px`; 
+                console.log('Header Height (calculated by JS - if needed):', headerHeight); 
+                // headerSpacer.style.height = `${headerHeight}px`; // هذا السطر لن يكون له تأثير لأن الـ spacer مخفي
             }
+            */
 
-
-            // --- 3. وظيفة الأكورديون (مع تحسينات بصرية) ---
-            const toggleAccordion = (header) => {
-                const parentItem = header.closest('.accordion-item');
-                const content = parentItem.querySelector('.accordion-content');
-                
-                accordionItems.forEach(item => {
-                    if (item !== parentItem && item.classList.contains('active')) {
-                        item.classList.remove('active');
-                        item.querySelector('.accordion-content').style.maxHeight = 0;
+            // *** MutationObserver و window.addEventListener('resize') لم يعد ضروريين لضبط الـ spacer ***
+            // لأن position: sticky يتعامل مع الأمر تلقائياً.
+            // يمكنك حذف هذا الجزء من الكود إذا تأكدت من أن sticky يعمل بشكل صحيح
+            /*
+            const observer = new MutationObserver((mutationsList, observer) => {
+                let shouldAdjust = false;
+                for(let mutation of mutationsList) {
+                    if (mutation.type === 'attributes' && (mutation.attributeName === 'style' || mutation.attributeName === 'class')) {
+                        shouldAdjust = true;
+                        break;
                     }
-                });
+                    if (mutation.type === 'childList' || (mutation.type === 'attributes' && mutation.target.closest('#main-header'))) {
+                        shouldAdjust = true;
+                        break;
+                    }
+                }
+                if (shouldAdjust) {
+                    console.log('Mutation detected on header, re-adjusting padding (if needed for other elements).');
+                    // adjustMenuPadding(); // إذا كنت تحتاج الارتفاع لغرض آخر
+                }
+            });
+            const config = { attributes: true, childList: true, subtree: true, characterData: true };
+            observer.observe(mainHeader, config);
+            window.addEventListener('resize', adjustMenuPadding); // يمكن إزالة هذا أيضاً
+            */
 
-                if (parentItem.classList.contains('active')) {
-                    parentItem.classList.remove('active');
-                    content.style.maxHeight = 0;
-                } else {
-                    parentItem.classList.add('active');
-                    content.style.maxHeight = content.scrollHeight + 'px'; 
+            // --- 3. وظيفة التنقل بين الأقسام (Tab-like navigation) ---
+            const switchSection = (targetId) => {
+                navTabButtons.forEach(button => button.classList.remove('active'));
+                menuSections.forEach(section => section.classList.remove('active'));
+
+                const activeButton = document.querySelector(`.nav-tab-button[data-target="${targetId}"]`);
+                const activeSection = document.getElementById(targetId);
+
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+                if (activeSection) {
+                    activeSection.classList.add('active');
                 }
             };
 
-            accordionHeaders.forEach(header => {
-                header.addEventListener('click', () => toggleAccordion(header));
+            // إضافة معالجات النقر لأزرار التنقل
+            navTabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetId = button.dataset.target;
+                    switchSection(targetId);
+                });
             });
+
+            // افتراضيًا، عرض قسم البطاطا عند التحميل
+            switchSection('fries-section');
+
 
             // --- 4. أوامر الطلب عبر الهاتف ---
             const orderButtons = document.querySelectorAll('.order-button');
@@ -1237,8 +1318,6 @@
                     const phoneNumber = '0790586053'; 
                     const telLink = `tel:${phoneNumber}`;
                     window.location.href = telLink;
-
-                    alert('جارٍ تحويلك لإجراء مكالمة هاتفية للطلب!');
                 });
             });
         });
